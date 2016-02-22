@@ -1,12 +1,14 @@
 module FindClasses
 
 import IO;
-import lang::java::m3::Core;
-import lang::java::jdt::m3::Core;
-import analysis::m3::Core;
+import analysis::m3::AST;
+import lang::java::m3::AST; 
+import Java2OFG;
 
 public void findClass(){
-	//str file = readFile(|project://ArchitecturalReconstruction/resources/eLib/Book.java|);
-	model = createM3FromDirectory(|file:///ArchitecturalReconstruction/resources/eLib|);
-	//evalProgram(file);
+	myModel = createAstsFromDirectory(|file:///Users/ruudandriessen/study/2imp25/2IMP25-Architectural-Reconstruction/ArchitecturalReconstruction/resources/eLib|
+, true);
+	ofg = createOFG(myModel);
+	// dographviz
+	print(graph);
 }
