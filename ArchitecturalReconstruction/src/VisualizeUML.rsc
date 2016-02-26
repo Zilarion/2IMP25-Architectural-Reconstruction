@@ -7,8 +7,8 @@ import lang::java::m3::Core;
 import Java2OFG;
 import FlowLanguage;
 
-// IO
 import IO;
+import Set;
 
 alias OFG = rel[loc from, loc to];
 
@@ -36,13 +36,18 @@ public str dotDiagram(M3 m, OFG ofg) {
          '}";
 }
 
+//public TypeSymbol getStrFromSet(set[TypeSymbol] f) {
+//	return getOneFrom(f);
+//}
+
 private map[loc, str] createFieldMap(M3 m) {
 	map[loc, str] fields = ();
 	for (cl <- classes(m)) {
 		str field = "";
 		for (f <- m@containment[cl], isField(f)) {
 			if (/<x:[^\/]+$>/ := f.path) {
-				field += "+<x> : type\\l";
+				//fType = getStrFromSet(m@types[f]);
+					field += "+<x> : void\\l";
 			}
 		}
 		fields += (cl : field);
@@ -63,7 +68,6 @@ private map[loc, str] createMethodMap(M3 m) {
 		}
 		// Then find all methods and put those in
 		for (met <- m@containment[cl], isMethod(met), !isConstructor(met)) {
-			println(met);
 			if (/<x:[^\/]+$>/ := met.path) {
 				field += "+<x> : type\\l";
 			}

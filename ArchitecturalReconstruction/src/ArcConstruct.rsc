@@ -20,12 +20,16 @@ import FlowLanguage;
 import util::ValueUI;
 
 public void f(){
+	// Create m3 model and program
 	m = createM3FromEclipseProject(|project://eLib|);
 	p = createOFG(|project://eLib|);
-	//text(p);
+	
+	// Build OFG graph
 	ofg = buildGraph(p);
-	//text(ofg);
+	
+	text(ofg);
+	//iprintln(ofg);
 	
 	// Visualize
-	showDot(m, ofg, |home:///study/2imp25/test.dot|);
+	showDot(m, ofg, |home:///study/2imp25/UML.dot|);
 }
