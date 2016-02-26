@@ -27,7 +27,8 @@ public void f(){
 	// Build OFG graph
 	ofg = buildGraph(p);
 	
-	text(ofg);
+	getPropagations(p, m);
+	//text(ofg);
 	//iprintln(ofg);
 	
 	// Visualize
