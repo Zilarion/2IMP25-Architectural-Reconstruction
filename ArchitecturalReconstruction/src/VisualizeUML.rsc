@@ -35,7 +35,7 @@ str dotSettings = "digraph classes {
 /*
  * Creates a string with dot specifications for rendering from a model and ofg
  */        
-public str createDotFile(M3 m, OFG ofg) {
+public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations) {
 	str dotStr = dotSettings;
 	
 	pathNames = invert(m@names);
@@ -46,7 +46,7 @@ public str createDotFile(M3 m, OFG ofg) {
 	}
 	
 	// Generate all associations
-	dotStr += generateAssociations(m, pathNames);
+	dotStr += generateAssociations(m, pathNames, relations);
 	dotStr += "}";
     return dotStr;
 }
@@ -68,7 +68,7 @@ private str generateClass(loc cl, M3 m, rel[loc, str] pathNames){
 /*
  * Creates a dot file string for associations of the given model and pathNames of that model
  */
-private str generateAssociations(M3 m, rel[loc, str]  pathNames) {
+private str generateAssociations(M3 m, rel[loc, str]  pathNames, tuple[rel[loc, loc], rel[loc, loc]] relations) {
 	str associationStr = "";
 	
 	// Generalization
@@ -85,12 +85,15 @@ private str generateAssociations(M3 m, rel[loc, str]  pathNames) {
  	
  	// Associations
  	associationStr += association;
-    // :TODO: add associations using OFG
-    
+	for (<from, to> <- relations[0]) {
+ 		associationStr += "<prettyLoc(to, pathNames)> -\> <prettyLoc(from, pathNames)>\n";
+ 	}
     
     // Dependency 
     associationStr += dependency;
-    // :TODO: add dependencies using OFG
+    for (<from, to> <- relations[1]) {
+ 		associationStr += "<prettyLoc(to, pathNames)> -\> <prettyLoc(from, pathNames)>\n";
+ 	}
      
 	return associationStr;
 }
@@ -201,12 +204,12 @@ private str prettify(TypeSymbol t, rel[loc, str] pathNames) {
 		case \interface(cn, ex) : return "<prettyLoc(cn, pathNames)>";
 		case \void() : return "void";
 	}
-	println("Warning - Unknown Typesymbol: <t>");
+	//println("Warning - Unknown Typesymbol: <t>");
 	return "unknown";
 } 
  
-public void showDot(M3 m, OFG ofg) = showDot(m, ofg, |home:///<m.id.authority>.dot|);
+public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations) = showDot(m, relations, |home:///<m.id.authority>.dot|);
  
-public void showDot(M3 m, OFG ofg, loc out) {
-  writeFile(out, createDotFile(m, ofg));
+public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out) {
+  writeFile(out, createDotFile(m, relations));
 }

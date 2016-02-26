@@ -41,7 +41,7 @@ OFG prop(OFG g, rel[loc,loc] gen, rel[loc,loc] kill, bool back) {
 	  return OUT;
 }
 
-void getPropagations(Program p, M3 m){
+tuple[rel[loc, loc], rel[loc, loc]] getPropagations(Program p, M3 m){
 	OFG ofg = buildGraph(p);
 	
 	associations = {};
@@ -72,8 +72,8 @@ void getPropagations(Program p, M3 m){
 	associations += getAssociations(weaklyBackwardProp, m);
 	dependencies += getDependencies(weaklyBackwardProp, m);
 	
-	text(associations);
-	text(dependencies);
+	tuple[rel[loc, loc], rel[loc, loc]] relations = <associations, dependencies>;
+	return relations;
 }
 
 public rel[loc, loc] getAssociations(OFG ofg, M3 m){

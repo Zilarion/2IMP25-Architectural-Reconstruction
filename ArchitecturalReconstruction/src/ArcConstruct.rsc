@@ -24,13 +24,9 @@ public void f(){
 	m = createM3FromEclipseProject(|project://eLib|);
 	p = createOFG(|project://eLib|);
 	
-	// Build OFG graph
-	ofg = buildGraph(p);
-	
-	getPropagations(p, m);
-	//text(ofg);
-	//iprintln(ofg);
-	
+	// Get relations between classes from propagating the ofg
+	relations = getPropagations(p, m);
+
 	// Visualize
-	showDot(m, ofg, |home:///study/2imp25/UML.dot|);
+	showDot(m, relations, |home:///study/2imp25/UML.dot|);
 }
