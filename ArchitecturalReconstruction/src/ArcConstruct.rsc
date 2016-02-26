@@ -27,7 +27,7 @@ public void f(){
 	// Build OFG graph
 	ofg = buildGraph(p);
 	
-	text(ofg);
+	//text(ofg);
 	//iprintln(ofg);
 	
 	// Visualize
