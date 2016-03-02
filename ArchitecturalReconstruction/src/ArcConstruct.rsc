@@ -26,6 +26,7 @@ public void f(){
 	
 	// Get relations between classes from propagating the ofg
 	relations = getPropagations(p, m);
+	text(relations);
 
 	// Visualize
 	showDot(m, relations, |home:///study/2imp25/UML.dot|);

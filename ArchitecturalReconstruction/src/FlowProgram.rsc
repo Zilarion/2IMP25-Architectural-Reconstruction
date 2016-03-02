@@ -72,6 +72,15 @@ tuple[rel[loc, loc], rel[loc, loc]] getPropagations(Program p, M3 m){
 	associations += getAssociations(weaklyBackwardProp, m);
 	dependencies += getDependencies(weaklyBackwardProp, m);
 	
+	
+	//Find extended classes and remove superfluous relations
+	associations = findExtensions(associations, m);
+	dependencies = findExtensions(dependencies, m);
+	
+	//Remove self-loops
+	associations = {<from, to> | <from, to> <- associations && from != to};
+	dependencies = {<from, to> | <from, to> <- dependencies && from != to};
+	
 	tuple[rel[loc, loc], rel[loc, loc]] relations = <associations, dependencies>;
 	return relations;
 }
@@ -79,8 +88,8 @@ tuple[rel[loc, loc], rel[loc, loc]] getPropagations(Program p, M3 m){
 public rel[loc, loc] getAssociations(OFG ofg, M3 m){
 	rel[loc, loc] associations = {};
 	
-	rel[loc, loc] fields = {<field, class> | <field, class> <- ofg, isField(field)};
-	associations += {<from, class> | <from, to> <- m@containment, <to, class> <- fields, class in classes(m)};
+	rel[loc, loc] fields = {<field, class> | <field, class> <- ofg && isField(field)};
+	associations += {<from, class> | <from, to> <- m@containment && <to, class> <- fields && class in classes(m)};
 	
 	return associations;
 }
@@ -89,16 +98,40 @@ public rel[loc, loc] getDependencies(OFG ofg, M3 m){
 	rel[loc, loc] dependencies = {};
 	
 	//Get parameters
-	par = {<from, to> | <from, to> <- ofg, from.scheme == "java+parameter"};
+	par = {<from, to> | <from, to> <- ofg && from.scheme == "java+parameter"};
 	//Get methods for parameters
-	mPar = {<from, to> | <from, to> <- m@containment, <a, to> <- par, a in classes(m)};
-	dependencies += {<a, c> | <a, method> <- m@containment, <method, c> <- mPar};
+	mPar = {<from, to> | <from, to> <- m@containment && <a, to> <- par && a in classes(m)};
+	dependencies += {<a, c> | <a, method> <- m@containment && <method, c> <- mPar};
 	
 	//Get variables
-	var = {<from, to> | <from, to> <- ofg, from.scheme == "java+variable", to in classes(m)};
+	var = {<from, to> | <from, to> <- ofg && from.scheme == "java+variable" && to in classes(m)};
 	//Get methods for variables
-	mVar = {<method, to> | <method, variable> <- m@containment, <variable, to> <- var};
-	dependencies += {<a, b> | <a, method> <- m@containment, <method, b> <- mVar};
+	mVar = {<method, to> | <method, variable> <- m@containment && <variable, to> <- var};
+	dependencies += {<a, b> | <a, method> <- m@containment && <method, b> <- mVar};
 	
 	return dependencies;
+}
+
+public rel[loc, loc] findExtensions(OFG ofg, M3 m){
+	//All extended classes
+	extendedClasses = {to | <from, to> <- m@extends};
+	
+	//Iterate over all classes and only leave the extended relation
+	for(loc class <- classes(m)) {
+	
+		rel[loc, loc] relationsFromCurrentClass = {<from, to> | <from, to> <- ofg && from == class};
+	
+		for(loc extendedClass <- extendedClasses){
+			rel[loc,loc] relationsFromChild = {<class, from> | <from, to> <- m@extends && to == extendedClass};
+			
+			if(relationsFromChild <= relationsFromCurrentClass){
+				//Remove superfluous relations
+				ofg -= relationsFromChild;
+				
+				//Add extension relation
+				ofg += <class, extendedClass>;
+			}
+		}
+	}
+	return ofg;
 }
