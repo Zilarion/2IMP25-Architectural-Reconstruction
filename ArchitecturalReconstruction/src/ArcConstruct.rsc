@@ -21,11 +21,25 @@ import util::ValueUI;
 
 public void f(){
 	// Create m3 model and program
-	//m = createM3FromEclipseProject(|project://eLib|);
-	//p = createOFG(|project://eLib|);
+	m = createM3FromEclipseProject(|project://eLib|);
+	p = createOFG(|project://eLib|);
 	
-	//m = createM3FromEclipseProject(|project://nekohtml-0.9.5//src//html//org/cyberneko//html|);
-	//p = createOFG(|project://nekohtml-0.9.5//src//html//org/cyberneko//html|);
+	// Get relations between classes from propagating the ofg
+	relations = getPropagations(p, m);
+	
+	// Visualize
+	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-eLib.dot|, true);
+	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-eLib.neato|);
+	
+	m = createM3FromEclipseProject(|project://nekohtml-0.9.5//src//html//org/cyberneko//html|);
+	p = createOFG(|project://nekohtml-0.9.5//src//html//org/cyberneko//html|);
+	
+	// Get relations between classes from propagating the ofg
+	relations = getPropagations(p, m);
+	
+	// Visualize
+	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-0.9.5.dot|, true);
+	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-0.9.5.neato|);
 	
 	m = createM3FromEclipseProject(|project://nekohtml-1.9.21//src//org//cyberneko//html|);
 	p = createOFG(|project://nekohtml-1.9.21//src//org//cyberneko//html|);
@@ -34,6 +48,6 @@ public void f(){
 	relations = getPropagations(p, m);
 	
 	// Visualize
-	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UMLNeato-neko-1.9.21.dot|, true);
-	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UMLNeato-neko-1.9.21.neato|);
+	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-1.9.21.dot|, true);
+	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-1.9.21.neato|);
 }

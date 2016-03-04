@@ -20,7 +20,7 @@ HTMLConfiguration -> ParserConfigurationSettings
 Identity -> DefaultFilter
 Writer -> DefaultFilter
 Script -> DefaultFilter
-DOMParser -> tools
+DOMParser -> xerces
 Tester -> Task
 edge[arrowhead = "empty"; style = "dashed"]
 SynthesizedItem -> HTMLEventInfo
@@ -57,7 +57,7 @@ edge[arrowhead = "open"; style = "dashed"]
 ContentScanner -> LocationItem
 HTMLTagBalancer -> Info
 ObjectFactory -> SecuritySupport
-TestHTMLDOM -> EncodingMap
+TestHTMLDOM -> ParserConfigurationSettings
 RemoveElements -> ElementRemover
 Writer -> ParserConfigurationSettings
 RemoveElements -> ParserConfigurationSettings
@@ -69,7 +69,7 @@ IntProperties -> Entry
 Script -> ParserConfigurationSettings
 Writer -> ParserConfigurationSettings
 "LocationItem" [
-	color="0.05555555557, 1.0, 0.8"
+	color="0.0396825396900, 1.0, 0.8"
  ]
 "DOMParser" [
 	color="0.0, 1.0, 0.8"
@@ -84,7 +84,7 @@ Writer -> ParserConfigurationSettings
 	color="0.0, 1.0, 0.8"
  ]
 "SecuritySupport" [
-	color="0.3333333333, 1.0, 0.8"
+	color="0.185185185200, 1.0, 0.8"
  ]
 "NamespaceBinder" [
 	color="0.0, 1.0, 0.8"
@@ -105,13 +105,13 @@ Writer -> ParserConfigurationSettings
 	color="0.0, 1.0, 0.8"
  ]
 "CurrentEntity" [
-	color="0.1111111111, 1.0, 0.8"
+	color="0.0462962963100, 1.0, 0.8"
  ]
 "HTMLElements" [
 	color="0.0, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.3333333333, 1.0, 0.8"
+	color="0.0925925925800, 1.0, 0.8"
  ]
 "RemoveElements" [
 	color="0.0, 1.0, 0.8"
@@ -120,16 +120,16 @@ Writer -> ParserConfigurationSettings
 	color="0.0, 1.0, 0.8"
  ]
 "ElementRemover" [
-	color="0.05555555557, 1.0, 0.8"
+	color="0.0462962963100, 1.0, 0.8"
  ]
 "ErrorReporter" [
 	color="0.0, 1.0, 0.8"
  ]
 "DefaultFilter" [
-	color="0.7777777777, 1.0, 0.8"
+	color="0.972222222200, 1.0, 0.8"
  ]
 "Writer" [
-	color="0.1666666667, 1.0, 0.8"
+	color="0.0462962963100, 1.0, 0.8"
  ]
 "HTMLTagBalancer" [
 	color="0.0, 1.0, 0.8"
@@ -171,16 +171,16 @@ Writer -> ParserConfigurationSettings
 	color="0.0, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.1111111111, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "PlaybackInputStream" [
-	color="0.1666666667, 1.0, 0.8"
+	color="0.0396825396900, 1.0, 0.8"
  ]
 "Info" [
-	color="0.1111111111, 1.0, 0.8"
+	color="0.0793650793600, 1.0, 0.8"
  ]
 "DOMFragmentParser" [
-	color="0.04166666667, 1.0, 0.8"
+	color="0.0925925925800, 1.0, 0.8"
  ]
 "TestHTMLDOM" [
 	color="0.0, 1.0, 0.8"

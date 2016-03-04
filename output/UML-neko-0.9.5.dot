@@ -313,7 +313,7 @@ HTMLConfiguration -> ParserConfigurationSettings
 Identity -> DefaultFilter
 Writer -> DefaultFilter
 Script -> DefaultFilter
-DOMParser -> Project
+DOMParser -> NamespaceSupport
 Tester -> Task
 edge[arrowhead = "empty"; style = "dashed"]
 SynthesizedItem -> HTMLEventInfo
@@ -350,7 +350,7 @@ edge[arrowhead = "open"; style = "dashed"]
 ContentScanner -> LocationItem
 HTMLTagBalancer -> Info
 ObjectFactory -> SecuritySupport
-TestHTMLDOM -> XMLDTDContentModelHandler
+TestHTMLDOM -> FileSet
 RemoveElements -> ElementRemover
 Writer -> ParserConfigurationSettings
 RemoveElements -> ParserConfigurationSettings
