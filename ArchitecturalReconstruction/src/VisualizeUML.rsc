@@ -13,6 +13,7 @@ import Map;
 import Relation;
 import Set;
 import String;
+import List;
 import util::ValueUI;
 
 
@@ -137,15 +138,14 @@ private str generateFields(loc cl, M3 m, rel[loc, str] pathNames) {
  * Generates a string of class methods for use in a dot file from a class, model and model pathNames
  */
 private str generateMethods(loc cl, M3 m, rel[loc, str] pathNames) {
-	// Create set of location for each of our class fields
-	//set[loc] constructors = {mt | mt <- m@containment[cl], isConstructor(mt) };
-	set[loc] methods = {mt | mt <- m@containment[cl], isMethod(mt)};//, !isConstructor(mt) };
+	// Create set of locations for each of our class methods
+	set[loc] methods = {mt | mt <- m@containment[cl], isMethod(mt)};
 	
 	// Only take the relevant types/modifiers for our methods
 	types = domainR(m@types, methods);
 	modifiers = domainR(m@modifiers, methods);
 	
-	str returnStr = "";
+	list[str] rList = [];
 	
 	for (mt <- methods) {
 		// Get the method name by using the pathNames variable
@@ -162,10 +162,42 @@ private str generateMethods(loc cl, M3 m, rel[loc, str] pathNames) {
 			methodName = applyModifier(methodName, mModifier);
 		}
 		
+		str parStr = "";
+		for (mParam <- m@containment[mt]) {
+			mType = m@types[mParam];
+			parStr += prettyLoc(mParam, pathNames) + " : " + prettify(getOneFrom(mType), pathNames) + ", ";
+		}
+		if (parStr != "") 
+			parStr = substring(parStr, 0, size(parStr) - 2);
+		
 		// Create the resulting string
-		returnStr += "<methodName> : <typeName>\\l";
+		rList += "<methodName>(<parStr>) : <typeName>\\l";
 	}
-	return returnStr;
+	
+	// Sort list to get a prettier UML
+	rList = sort(rList, bool(str a, str b){ 
+		str aStart = substring(a, 0, 1);
+		str bStart = substring(b, 0, 1);
+		if (aStart != bStart && aStart == "+") {
+			return true;
+		}
+		if (aStart == "#" && bStart == "+") {
+			return false;
+		}
+		if (aStart == "#" && bStart == "-") {
+			return true;
+		}
+		if (aStart == "-" && aStart != bStart) {
+			return false;
+		}
+		return a < b;
+ 	});
+ 	
+	str resultStr = "";
+	for (r <- rList) {
+		resultStr += r;
+	}
+	return resultStr;
 }
 
 private str prettyLoc(loc c, rel[loc, str] pathNames) {
@@ -175,7 +207,7 @@ private str prettyLoc(loc c, rel[loc, str] pathNames) {
 private str applyModifier(str name, Modifier modifier) {
 	switch(modifier){
 		case \private():
-			return " -  <name>";
+			return "- <name>";
 		case \protected():
 			return "# <name>";
 		case \static():
@@ -195,18 +227,42 @@ private str applyModifier(str name, Modifier modifier) {
  */
 private str prettify(TypeSymbol t, rel[loc, str] pathNames) {
 	switch(t) {
+		// Base types
 		case \int() : return "int";
 		case \short() : return "short";
 		case \long() : return "long";
 		case \char() : return "char";
 		case \boolean() : return "boolean";
-		case \class(cn, ex) : return "<prettyLoc(cn, pathNames)>";
-		case \interface(cn, ex) : return "<prettyLoc(cn, pathNames)>";
 		case \void() : return "void";
+		case \object() : return "object";
+		// Base class/interface types
+		case \class(cn, ex) : 
+			return "<prettyLoc(cn, pathNames)>";
+		case \interface(cn, ex) : 
+			return "<prettyLoc(cn, pathNames)>";
+		case \method(ml, fp, returnType, x) :
+			return prettify(returnType, pathNames);
+		case \array(classType, count) : 
+			return prettify(classType, pathNames) + "[<count>]";
+		case \constructor(loc cn, classType) : 
+			return prettyLoc(cn, pathNames); // :TODO: currently returns class name, perhaps leave empty?
 	}
-	//println("Warning - Unknown Typesymbol: <t>");
+	println("Warning - Unknown Typesymbol: <t>");
 	return "unknown";
 } 
+
+private str prettify(list[TypeSymbol] tSymbols, rel[loc,str] pathNames) {
+	str result = "";
+	for (t <- tSymbols) {
+		result += prettify(t, pathNames) + ", ";
+	}	
+	if (result == "")
+		return result;
+		
+	int size = size(result);
+	result = substring(result, 0, size - 2);
+	return result;
+}
  
 public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations) = showDot(m, relations, |home:///<m.id.authority>.dot|);
  
