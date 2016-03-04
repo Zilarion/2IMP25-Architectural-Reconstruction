@@ -457,7 +457,7 @@ PlaybackInputStream -> FilterInputStream
 SAXParser -> AbstractSAXParser
 HTMLScannerTest -> TestCase
 Purifier -> DefaultFilter
-DOMParser -> parser
+DOMParser -> XMLAttributesImpl
 "org/cyberneko/html/HTMLScannerTest/testInfiniteLoop()/$anonymous1" -> HTMLConfiguration
 Writer -> DefaultFilter
 LocatorEncodingTest -> TestCase
@@ -523,7 +523,7 @@ HTMLScanner -> ContentScanner
 NamespaceSupport -> Entry
 IntProperties -> Entry
 edge[arrowhead = "open"; style = "dashed"]
-FragmentContextStackTest -> XMLParseException
+FragmentContextStackTest -> util
 ObjectFactory -> SecuritySupport
 RemoveElements -> ElementRemover
 RemoveElements -> ParserConfigurationSettings
@@ -540,7 +540,7 @@ ContentScanner -> LocationItem
 HTMLScannerTest -> HTMLScanner
 HTMLTagBalancer -> Info
 HTMLScanner -> CurrentEntity
-TestHTMLDOM -> URI
+TestHTMLDOM -> XMLConfigurationException
 LostText -> Entry
 CanonicalTest -> ParserConfigurationSettings
 HTMLTagBalancer -> ElementEntry

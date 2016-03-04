@@ -29,30 +29,30 @@ Library -> Loan
 Main -> Document
 Document -> User
 "InternalUser" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Book" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "User" [
-	color="0.1142857143, 1.0, 0.5"
+	color="0.25, 1.0, 0.8"
  ]
 "Loan" [
-	color="0.5714285713, 1.0, 0.5"
+	color="0.25, 1.0, 0.8"
  ]
 "TechnicalReport" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Document" [
-	color="0.761904762, 1.0, 0.5"
+	color="0.3333333333, 1.0, 0.8"
  ]
 "Library" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Journal" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Main" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 }

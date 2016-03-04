@@ -17,7 +17,7 @@ PlaybackInputStream -> FilterInputStream
 SAXParser -> AbstractSAXParser
 HTMLScannerTest -> TestCase
 Purifier -> DefaultFilter
-DOMParser -> apache
+DOMParser -> XMLLocator
 "org/cyberneko/html/HTMLScannerTest/testInfiniteLoop()/$anonymous1" -> HTMLConfiguration
 Writer -> DefaultFilter
 LocatorEncodingTest -> TestCase
@@ -83,7 +83,7 @@ HTMLScanner -> ContentScanner
 NamespaceSupport -> Entry
 IntProperties -> Entry
 edge[arrowhead = "open"; style = "dashed"]
-FragmentContextStackTest -> NamespaceContext
+FragmentContextStackTest -> util
 ObjectFactory -> SecuritySupport
 RemoveElements -> ElementRemover
 RemoveElements -> ParserConfigurationSettings
@@ -100,7 +100,7 @@ ContentScanner -> LocationItem
 HTMLScannerTest -> HTMLScanner
 HTMLTagBalancer -> Info
 HTMLScanner -> CurrentEntity
-TestHTMLDOM -> XMLConfigurationException
+TestHTMLDOM -> Constants
 LostText -> Entry
 CanonicalTest -> ParserConfigurationSettings
 HTMLTagBalancer -> ElementEntry
@@ -118,192 +118,192 @@ HeadNamespaceBug -> ParserConfigurationSettings
 Writer -> ParserConfigurationSettings
 HTMLAugmentations -> LocationItem
 "DOMFragmentParserTest" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "HTMLEntities" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.03333333333, 1.0, 0.5"
+	color="0.08333333333, 1.0, 0.8"
  ]
 "XercesBridge_2_2" [
-	color="0.01904761905, 1.0, 0.5"
+	color="0.02380952381, 1.0, 0.8"
  ]
 "FragmentContextStackTest" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "InfiniteLoopScanner" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "IntProperties" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "CurrentEntity" [
-	color="0.1666666667, 1.0, 0.5"
+	color="0.07142857143, 1.0, 0.8"
  ]
 "HTMLElements" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.2222222222, 1.0, 0.5"
+	color="0.1666666667, 1.0, 0.8"
  ]
 "RemoveElements" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "LocationItem" [
-	color="0.1458333333, 1.0, 0.5"
+	color="0.07142857143, 1.0, 0.8"
  ]
 "MyContentScanner" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "HTMLAugmentations" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "ElementRemover" [
-	color="0.1111111111, 1.0, 0.5"
+	color="0.3333333333, 1.0, 0.8"
  ]
 "HTMLScannerTest" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "ErrorReporter" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "DefaultFilter" [
-	color="0.8125, 1.0, 0.5"
+	color="0.3333333333, 1.0, 0.8"
  ]
 "Writer" [
-	color="0.5555555557, 1.0, 0.5"
+	color="0.1666666667, 1.0, 0.8"
  ]
 "HTMLTagBalancer" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "DOMParser" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "CanonicalTest" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "HTMLErrorHandler" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "ObjectFactory" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "HTMLConfiguration" [
-	color="0.01666666667, 1.0, 0.5"
+	color="0.04166666667, 1.0, 0.8"
  ]
 "ElementList" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "UTF8BOMSkipper" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Element" [
-	color="0.6666666667, 1.0, 0.5"
+	color="0.4444444443, 1.0, 0.8"
  ]
 "SAXParser" [
-	color="0.06666666667, 1.0, 0.5"
+	color="0.05555555557, 1.0, 0.8"
  ]
 "HTMLTagBalancingListenerTest" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "TestHTMLDOMFragment" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "XercesBridge" [
-	color="0.08333333333, 1.0, 0.5"
+	color="0.0980392157, 1.0, 0.8"
  ]
 "TestParser" [
-	color="0.2222222222, 1.0, 0.5"
+	color="0.02380952381, 1.0, 0.8"
  ]
 "SecuritySupport" [
-	color="0.2222222222, 1.0, 0.5"
+	color="0.6666666667, 1.0, 0.8"
  ]
 "LostText" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "NamespaceSupport" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Script" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Identity" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "InfoStack" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "SecuritySupport12" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "NamespaceBinder" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Writer" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "HTMLScanner" [
-	color="0.08333333333, 1.0, 0.5"
+	color="0.1111111111, 1.0, 0.8"
  ]
 "XercesBridge_2_0" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.2380952381, 1.0, 0.5"
+	color="0.07843137253, 1.0, 0.8"
  ]
 "PlaybackInputStream" [
-	color="0.04761904763, 1.0, 0.5"
+	color="0.08333333333, 1.0, 0.8"
  ]
 "XercesBridge_2_1" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "ConfigurationError" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Info" [
-	color="0.2083333333, 1.0, 0.5"
+	color="0.1666666667, 1.0, 0.8"
  ]
 "XercesBridge_2_3" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "DOMFragmentParser" [
-	color="0.7777777777, 1.0, 0.5"
+	color="0.07142857143, 1.0, 0.8"
  ]
 "WriterTest" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "HTMLSAXParser" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "HeadNamespaceBug" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "EvaluateInputSourceFilter" [
-	color="0.09523809523, 1.0, 0.5"
+	color="0.1666666667, 1.0, 0.8"
  ]
 "Minimal" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "SynthesizedItem" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "LocatorEncodingTest" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "ElementEntry" [
-	color="0.1904761905, 1.0, 0.5"
+	color="0.1666666667, 1.0, 0.8"
  ]
 "TestHTMLDOM" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "Purifier" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "SpecialScanner" [
-	color="0., 1.0, 0.5"
+	color="0.0, 1.0, 0.8"
  ]
 "ContentScanner" [
-	color="0.1333333333, 1.0, 0.5"
+	color="0.0588235294, 1.0, 0.8"
  ]
 }
