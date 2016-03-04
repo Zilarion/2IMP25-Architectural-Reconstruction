@@ -15,6 +15,7 @@ import Set;
 import String;
 import List;
 import util::ValueUI;
+import util::Math;
 
 
 alias OFG = rel[loc from, loc to];
@@ -32,7 +33,17 @@ str dotSettings = "digraph classes {
 		         ' node [ fontname = \"Bitstream Vera Sans\" fontsize = 8 shape = \"record\" ]
 		         ' edge [ fontname = \"Bitstream Vera Sans\" fontsize = 8 ]
 		         '";
-        
+		         
+ str dotSettingsNeato = "digraph classes {
+				 ' fontname = \"Bitstream Vera Sans\"
+				 ' fontsize = 8
+				 ' overlap=false
+				 ' node [ fontname = \"Bitstream Vera Sans\" fontsize = 8 shape = \"circle\" style=\"filled\" label=\"\"]
+				 ' edge [ fontname = \"Bitstream Vera Sans\" fontsize = 8 ]
+				 '";
+			        
+rel[loc, int] nodeRelation = {};
+
 /*
  * Creates a string with dot specifications for rendering from a model and ofg
  */        
@@ -48,6 +59,23 @@ public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bo
 	
 	// Generate all associations
 	dotStr += generateAssociations(m, pathNames, relations);
+	dotStr += "}";
+    return dotStr;
+}
+
+public str createDotFileNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations) {
+	str dotStr = dotSettingsNeato;
+	
+	pathNames = invert(m@names);
+	
+	// Generate all associations
+	dotStr += generateAssociations(m, pathNames, relations);
+	
+	// Generate all class blocks
+	for (cl <- classes(m)) {
+		dotStr += generateClassNeato(cl, m, pathNames);
+	}
+	
 	dotStr += "}";
     return dotStr;
 }
@@ -72,6 +100,19 @@ private str generateClass(loc cl, M3 m, rel[loc, str] pathNames, bool classOnly)
 		'";
 }
 
+private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames) {
+	real maximum = toReal(getOneFrom({number | <l, number> <- nodeRelation, <l1, number2> <- nodeRelation, number > number2}));
+	real relValue = 0.0;
+	if (size(nodeRelation[cl]) > 0) {
+		relValue = toReal(getOneFrom(nodeRelation[cl]));
+	}
+	real h = (relValue/maximum)/3.0;
+	return "\"<prettyLoc(cl, pathNames)>\" [
+		'	color=\"<h>, 1.0, 0.5\"
+		' ]
+		'";
+}
+
 /*
  * Creates a dot file string for associations of the given model and pathNames of that model
  */
@@ -81,28 +122,44 @@ private str generateAssociations(M3 m, rel[loc, str]  pathNames, tuple[rel[loc, 
 	// Generalization
 	associationStr += generalization;
 	for (<from, to> <- m@extends) {
-         associationStr += "<prettyLocDep(to, pathNames)> -\> <prettyLocDep(from, pathNames)>\n";
+		nodeRelation = incrementIntSet(to, nodeRelation);
+    	associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
  	
  	// Realization
  	associationStr += realisation; 
  	for (<from, to> <- m@implements) {
- 		associationStr += "<prettyLocDep(to, pathNames)> -\> <prettyLocDep(from, pathNames)>\n";
+		nodeRelation = incrementIntSet(to, nodeRelation);
+ 		associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
  	
  	// Associations
  	associationStr += association;
 	for (<from, to> <- relations[0]) {
- 		associationStr += "<prettyLocDep(to, pathNames)> -\> <prettyLocDep(from, pathNames)>\n";
+		nodeRelation = incrementIntSet(to, nodeRelation);
+ 		associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
     
     // Dependency 
     associationStr += dependency;
     for (<from, to> <- relations[1]) {
- 		associationStr += "<prettyLocDep(to, pathNames)> -\> <prettyLocDep(from, pathNames)>\n";
+		nodeRelation = incrementIntSet(to, nodeRelation);
+ 		associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
-     
 	return associationStr;
+}
+
+/**
+ * Increments the int in the relation set which has value l
+ */
+private rel[loc,int] incrementIntSet(loc l, rel[loc,int] relation) {
+	if(size(domainR(relation, {l})) > 0) {
+		relation = {<l1, numb + 1> | <l1, numb> <- relation, l1 == l} + 
+				   {<l1, numb> | <l1, numb> <- relation, l1 != l};
+	} else {
+		relation += <l, 1>;
+	}
+	return relation;
 }
 
 /*
@@ -289,4 +346,8 @@ public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool cl
  
 public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out, bool classOnly) {
   writeFile(out, createDotFile(m, relations, classOnly));
+}
+
+public void showDotNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out) {
+  writeFile(out, createDotFileNeato(m, relations));
 }
