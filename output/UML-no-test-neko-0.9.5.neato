@@ -14,7 +14,7 @@ PlaybackInputStream -> FilterInputStream
 SAXParser -> AbstractSAXParser
 SecuritySupport12 -> SecuritySupport
 Purifier -> DefaultFilter
-DOMParser -> QName
+DOMParser -> XMLAttributesImpl
 Writer -> DefaultFilter
 HTMLConfiguration -> ParserConfigurationSettings
 edge[arrowhead = "empty"; style = "dashed"]
@@ -56,129 +56,129 @@ Writer -> ParserConfigurationSettings
 NamespaceSupport -> Entry
 IntProperties -> Entry
 "LocationItem" [
-	color="0.0347222222200, 1.0, 0.8"
+	color="0.243055555600, 1.0, 0.8"
  ]
 "DOMParser" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLEntities" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Element" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SecuritySupport" [
-	color="0.0694444444400, 1.0, 0.8"
+	color="0.208333333300, 1.0, 0.8"
  ]
 "NamespaceBinder" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ConfigurationError" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SynthesizedItem" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "IntProperties" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "CurrentEntity" [
-	color="0.0347222222200, 1.0, 0.8"
+	color="0.243055555600, 1.0, 0.8"
  ]
 "HTMLElements" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.0694444444400, 1.0, 0.8"
+	color="0.208333333300, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLAugmentations" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ElementRemover" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ErrorReporter" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "DefaultFilter" [
-	color="0.173611111100, 1.0, 0.8"
+	color="0.104166666700, 1.0, 0.8"
  ]
 "Writer" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLTagBalancer" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ObjectFactory" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLConfiguration" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ElementList" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SAXParser" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "NamespaceSupport" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Identity" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "InfoStack" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SecuritySupport12" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLScanner" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.0694444444400, 1.0, 0.8"
+	color="0.208333333300, 1.0, 0.8"
  ]
 "PlaybackInputStream" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Info" [
-	color="0.0694444444400, 1.0, 0.8"
+	color="0.208333333300, 1.0, 0.8"
  ]
 "DOMFragmentParser" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Purifier" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SpecialScanner" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ContentScanner" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 }

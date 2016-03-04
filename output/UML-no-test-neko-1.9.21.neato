@@ -18,7 +18,7 @@ PlaybackInputStream -> FilterInputStream
 SAXParser -> AbstractSAXParser
 SecuritySupport12 -> SecuritySupport
 Purifier -> DefaultFilter
-DOMParser -> XMLResourceIdentifier
+DOMParser -> DefaultErrorHandler
 Writer -> DefaultFilter
 HTMLConfiguration -> ParserConfigurationSettings
 edge[arrowhead = "empty"; style = "dashed"]
@@ -73,192 +73,192 @@ HTMLScanner -> CurrentEntity
 HTMLConfiguration -> XercesBridge
 ObjectFactory -> XercesBridge
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLEntities" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.0396825396900, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
  ]
 "XercesBridge_2_2" [
-	color="0.0198412698400, 1.0, 0.8"
+	color="0.2579365079400, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "IntProperties" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "CurrentEntity" [
-	color="0.0595238095300, 1.0, 0.8"
+	color="0.218253968300, 1.0, 0.8"
  ]
 "HTMLElements" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.0793650793600, 1.0, 0.8"
- ]
-"" [
-	color="0.0, 1.0, 0.8"
- ]
-"LocationItem" [
-	color="0.0595238095300, 1.0, 0.8"
- ]
-"" [
-	color="0.0, 1.0, 0.8"
- ]
-"HTMLAugmentations" [
-	color="0.0, 1.0, 0.8"
- ]
-"ElementRemover" [
-	color="0.0, 1.0, 0.8"
- ]
-"" [
-	color="0.0, 1.0, 0.8"
- ]
-"ErrorReporter" [
-	color="0.0, 1.0, 0.8"
- ]
-"DefaultFilter" [
 	color="0.198412698400, 1.0, 0.8"
  ]
+"" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"LocationItem" [
+	color="0.218253968300, 1.0, 0.8"
+ ]
+"" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"HTMLAugmentations" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"ElementRemover" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"ErrorReporter" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"DefaultFilter" [
+	color="0.0793650793600, 1.0, 0.8"
+ ]
 "Writer" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLTagBalancer" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "DOMParser" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ObjectFactory" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLConfiguration" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ElementList" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Element" [
-	color="0.0793650793600, 1.0, 0.8"
+	color="0.198412698400, 1.0, 0.8"
  ]
 "SAXParser" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "XercesBridge" [
-	color="0.0992063491900, 1.0, 0.8"
+	color="0.178571428600, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SecuritySupport" [
-	color="0.0793650793600, 1.0, 0.8"
+	color="0.198412698400, 1.0, 0.8"
  ]
 "LostText" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "NamespaceSupport" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Identity" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "InfoStack" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SecuritySupport12" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "NamespaceBinder" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "HTMLScanner" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "XercesBridge_2_0" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.0793650793600, 1.0, 0.8"
+	color="0.198412698400, 1.0, 0.8"
  ]
 "PlaybackInputStream" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "XercesBridge_2_1" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ConfigurationError" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Info" [
-	color="0.0793650793600, 1.0, 0.8"
+	color="0.198412698400, 1.0, 0.8"
  ]
 "XercesBridge_2_3" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "DOMFragmentParser" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SynthesizedItem" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ElementEntry" [
-	color="0.0396825396900, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
  ]
 "" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "Purifier" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "SpecialScanner" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 "ContentScanner" [
-	color="0.0, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
  ]
 }

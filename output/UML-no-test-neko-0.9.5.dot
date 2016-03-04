@@ -307,7 +307,7 @@ PlaybackInputStream -> FilterInputStream
 SAXParser -> AbstractSAXParser
 SecuritySupport12 -> SecuritySupport
 Purifier -> DefaultFilter
-DOMParser -> ParserConfigurationSettings
+DOMParser -> XMLInputSource
 Writer -> DefaultFilter
 HTMLConfiguration -> ParserConfigurationSettings
 edge[arrowhead = "empty"; style = "dashed"]
