@@ -106,7 +106,7 @@ private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames) {
 	if (size(nodeRelation[cl]) > 0) {
 		relValue = toReal(getOneFrom(nodeRelation[cl]));
 	}
-	real h = (relValue/maximum) / 3;
+	real h = (relValue / maximum) / 360 * 100;
 	return "\"<prettyLoc(cl, pathNames)>\" [
 		'	color=\"<h>, 1.0, 0.8\"
 		' ]
