@@ -14,7 +14,7 @@ PlaybackInputStream -> FilterInputStream
 SAXParser -> AbstractSAXParser
 SecuritySupport12 -> SecuritySupport
 Purifier -> DefaultFilter
-DOMParser -> XMLDocumentHandler
+DOMParser -> QName
 Writer -> DefaultFilter
 HTMLConfiguration -> ParserConfigurationSettings
 edge[arrowhead = "empty"; style = "dashed"]
@@ -56,7 +56,7 @@ Writer -> ParserConfigurationSettings
 NamespaceSupport -> Entry
 IntProperties -> Entry
 "LocationItem" [
-	color="0.0584795321700, 1.0, 0.8"
+	color="0.0347222222200, 1.0, 0.8"
  ]
 "DOMParser" [
 	color="0.0, 1.0, 0.8"
@@ -68,10 +68,10 @@ IntProperties -> Entry
 	color="0.0, 1.0, 0.8"
  ]
 "Element" [
-	color="0.0529100529200, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 "SecuritySupport" [
-	color="0.333333333300, 1.0, 0.8"
+	color="0.0694444444400, 1.0, 0.8"
  ]
 "NamespaceBinder" [
 	color="0.0, 1.0, 0.8"
@@ -92,13 +92,13 @@ IntProperties -> Entry
 	color="0.0, 1.0, 0.8"
  ]
 "CurrentEntity" [
-	color="0.158730158700, 1.0, 0.8"
+	color="0.0347222222200, 1.0, 0.8"
  ]
 "HTMLElements" [
 	color="0.0, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.416666666700, 1.0, 0.8"
+	color="0.0694444444400, 1.0, 0.8"
  ]
 "" [
 	color="0.0, 1.0, 0.8"
@@ -107,16 +107,16 @@ IntProperties -> Entry
 	color="0.0, 1.0, 0.8"
  ]
 "ElementRemover" [
-	color="0.0462962963100, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 "ErrorReporter" [
 	color="0.0, 1.0, 0.8"
  ]
 "DefaultFilter" [
-	color="1.45833333300, 1.0, 0.8"
+	color="0.173611111100, 1.0, 0.8"
  ]
 "Writer" [
-	color="0.0617283950600, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 "HTMLTagBalancer" [
 	color="0.0, 1.0, 0.8"
@@ -125,13 +125,13 @@ IntProperties -> Entry
 	color="0.0, 1.0, 0.8"
  ]
 "HTMLConfiguration" [
-	color="0.0308641975300, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 "ElementList" [
 	color="0.0, 1.0, 0.8"
  ]
 "SAXParser" [
-	color="0.0462962963100, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 "" [
 	color="0.0, 1.0, 0.8"
@@ -155,19 +155,19 @@ IntProperties -> Entry
 	color="0.0, 1.0, 0.8"
  ]
 "HTMLScanner" [
-	color="0.0694444444400, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 "Entry" [
-	color="0.0793650793600, 1.0, 0.8"
+	color="0.0694444444400, 1.0, 0.8"
  ]
 "PlaybackInputStream" [
-	color="0.138888888900, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 "Info" [
-	color="0.277777777800, 1.0, 0.8"
+	color="0.0694444444400, 1.0, 0.8"
  ]
 "DOMFragmentParser" [
-	color="0.0520833333300, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 "" [
 	color="0.0, 1.0, 0.8"
@@ -179,6 +179,6 @@ IntProperties -> Entry
 	color="0.0, 1.0, 0.8"
  ]
 "ContentScanner" [
-	color="0.104166666700, 1.0, 0.8"
+	color="0.0, 1.0, 0.8"
  ]
 }
