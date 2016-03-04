@@ -36,14 +36,14 @@ str dotSettings = "digraph classes {
 /*
  * Creates a string with dot specifications for rendering from a model and ofg
  */        
-public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations) {
+public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool classOnly) {
 	str dotStr = dotSettings;
 	
 	pathNames = invert(m@names);
 	
 	// Generate all class blocks
 	for (cl <- classes(m)) {
-		dotStr += generateClass(cl, m, pathNames);
+		dotStr += generateClass(cl, m, pathNames, classOnly);
 	}
 	
 	// Generate all associations
@@ -55,12 +55,18 @@ public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations) {
 /*
  * Generates a class string for use in a dot file from a class, model and model pathNames
  */
-private str generateClass(loc cl, M3 m, rel[loc, str] pathNames){
+private str generateClass(loc cl, M3 m, rel[loc, str] pathNames, bool classOnly){
+	str fields = "";
+	str methods = "";
+	if (!classOnly) { 
+		fields = generateFields(cl, m, pathNames);
+		methods = generateMethods(cl, m, pathNames);
+	};
 	return "\"<prettyLoc(cl, pathNames)>\" [
 		'	label=\"{
 		' 		<cl.path[1..]>|
-		' 		<generateFields(cl, m, pathNames)>|
-		' 		<generateMethods(cl, m, pathNames)>
+		' 		<fields>|
+		' 		<methods>
 		'	}\"
 		' ]
 		'";
@@ -279,8 +285,8 @@ private str prettify(list[TypeSymbol] tSymbols, rel[loc,str] pathNames) {
 	return result;
 }
  
-public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations) = showDot(m, relations, |home:///<m.id.authority>.dot|);
+public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool classOnly) = showDot(m, relations, |home:///<m.id.authority>.dot|, classOnly);
  
-public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out) {
-  writeFile(out, createDotFile(m, relations));
+public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out, bool classOnly) {
+  writeFile(out, createDotFile(m, relations, classOnly));
 }
