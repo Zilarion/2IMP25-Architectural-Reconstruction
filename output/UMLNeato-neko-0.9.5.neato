@@ -1,0 +1,197 @@
+digraph classes {
+ fontname = "Bitstream Vera Sans"
+ fontsize = 8
+ overlap=false
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled" label=""]
+ edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
+edge[arrowhead = "empty"; style= "solid"]
+HTMLSAXParser -> AbstractSAXParser
+ElementRemover -> DefaultFilter
+UTF8BOMSkipper -> FilterInputStream
+HTMLComponent -> XMLComponent
+NamespaceBinder -> DefaultFilter
+ConfigurationError -> Error
+PlaybackInputStream -> FilterInputStream
+SAXParser -> AbstractSAXParser
+SecuritySupport12 -> SecuritySupport
+Purifier -> DefaultFilter
+Writer -> DefaultFilter
+HTMLConfiguration -> ParserConfigurationSettings
+Identity -> DefaultFilter
+Writer -> DefaultFilter
+Script -> DefaultFilter
+DOMParser -> XMLDTDHandler
+Tester -> Task
+edge[arrowhead = "empty"; style = "dashed"]
+SynthesizedItem -> HTMLEventInfo
+HTMLScanner -> XMLDocumentScanner
+"org/cyberneko/html/SecuritySupport12/getContextClassLoader()/$anonymous1" -> PrivilegedAction
+"org/cyberneko/html/SecuritySupport12/getSystemProperty(java/lang/String)/$anonymous1" -> PrivilegedAction
+"org/cyberneko/html/SecuritySupport12/getFileExists(java/io/File)/$anonymous1" -> PrivilegedAction
+NamespaceSupport -> NamespaceContext
+"org/cyberneko/html/SecuritySupport12/getLastModified(java/io/File)/$anonymous1" -> PrivilegedAction
+"org/cyberneko/html/SecuritySupport12/getResourceAsStream(java/lang/ClassLoader,java/lang/String)/$anonymous1" -> PrivilegedAction
+HTMLScanner -> XMLLocator
+LocationItem -> HTMLEventInfo
+HTMLTagBalancer -> XMLDocumentFilter
+DefaultFilter -> HTMLComponent
+HTMLTagBalancer -> HTMLComponent
+HTMLAugmentations -> Augmentations
+DefaultFilter -> XMLDocumentFilter
+DOMFragmentParser -> XMLDocumentHandler
+HTMLScanner -> HTMLComponent
+"org/cyberneko/html/SecuritySupport12/getSystemClassLoader()/$anonymous1" -> PrivilegedAction
+HTMLConfiguration -> XMLPullParserConfiguration
+ContentScanner -> Scanner
+SpecialScanner -> Scanner
+ErrorReporter -> HTMLErrorReporter
+"org/cyberneko/html/SecuritySupport12/getFileInputStream(java/io/File)/$anonymous1" -> PrivilegedExceptionAction
+"org/cyberneko/html/SecuritySupport12/getParentClassLoader(java/lang/ClassLoader)/$anonymous1" -> PrivilegedAction
+edge[arrowhead = "open"; style = "solid"]
+HTMLScanner -> CurrentEntity
+InfoStack -> Info
+HTMLScanner -> PlaybackInputStream
+NamespaceSupport -> Entry
+IntProperties -> Entry
+edge[arrowhead = "open"; style = "dashed"]
+ContentScanner -> LocationItem
+HTMLTagBalancer -> Info
+ObjectFactory -> SecuritySupport
+TestHTMLDOM -> parsers
+RemoveElements -> ElementRemover
+Writer -> ParserConfigurationSettings
+RemoveElements -> ParserConfigurationSettings
+RemoveElements -> Writer
+Tester -> ParserConfigurationSettings
+TestHTMLDOMFragment -> DOMFragmentParser
+NamespaceSupport -> Entry
+IntProperties -> Entry
+Script -> ParserConfigurationSettings
+Writer -> ParserConfigurationSettings
+"LocationItem" [
+	color="0.1666666667, 1.0, 0.5"
+ ]
+"DOMParser" [
+	color="0., 1.0, 0.5"
+ ]
+"HTMLEntities" [
+	color="0., 1.0, 0.5"
+ ]
+"UTF8BOMSkipper" [
+	color="0., 1.0, 0.5"
+ ]
+"Element" [
+	color="0., 1.0, 0.5"
+ ]
+"SecuritySupport" [
+	color="0.2222222222, 1.0, 0.5"
+ ]
+"NamespaceBinder" [
+	color="0., 1.0, 0.5"
+ ]
+"ConfigurationError" [
+	color="0., 1.0, 0.5"
+ ]
+"HTMLSAXParser" [
+	color="0., 1.0, 0.5"
+ ]
+"SynthesizedItem" [
+	color="0., 1.0, 0.5"
+ ]
+"Tester" [
+	color="0., 1.0, 0.5"
+ ]
+"IntProperties" [
+	color="0., 1.0, 0.5"
+ ]
+"CurrentEntity" [
+	color="0.04761904763, 1.0, 0.5"
+ ]
+"HTMLElements" [
+	color="0., 1.0, 0.5"
+ ]
+"Entry" [
+	color="0.2222222222, 1.0, 0.5"
+ ]
+"RemoveElements" [
+	color="0., 1.0, 0.5"
+ ]
+"HTMLAugmentations" [
+	color="0., 1.0, 0.5"
+ ]
+"ElementRemover" [
+	color="0.05555555557, 1.0, 0.5"
+ ]
+"ErrorReporter" [
+	color="0., 1.0, 0.5"
+ ]
+"DefaultFilter" [
+	color="0.3333333333, 1.0, 0.5"
+ ]
+"Writer" [
+	color="0.1111111111, 1.0, 0.5"
+ ]
+"HTMLTagBalancer" [
+	color="0., 1.0, 0.5"
+ ]
+"ObjectFactory" [
+	color="0., 1.0, 0.5"
+ ]
+"HTMLConfiguration" [
+	color="0., 1.0, 0.5"
+ ]
+"ElementList" [
+	color="0., 1.0, 0.5"
+ ]
+"SAXParser" [
+	color="0., 1.0, 0.5"
+ ]
+"TestHTMLDOMFragment" [
+	color="0., 1.0, 0.5"
+ ]
+"NamespaceSupport" [
+	color="0., 1.0, 0.5"
+ ]
+"Identity" [
+	color="0., 1.0, 0.5"
+ ]
+"InfoStack" [
+	color="0., 1.0, 0.5"
+ ]
+"SecuritySupport12" [
+	color="0., 1.0, 0.5"
+ ]
+"Writer" [
+	color="0., 1.0, 0.5"
+ ]
+"Script" [
+	color="0., 1.0, 0.5"
+ ]
+"HTMLScanner" [
+	color="0., 1.0, 0.5"
+ ]
+"Entry" [
+	color="0.1111111111, 1.0, 0.5"
+ ]
+"PlaybackInputStream" [
+	color="0.1666666667, 1.0, 0.5"
+ ]
+"Info" [
+	color="0.09523809523, 1.0, 0.5"
+ ]
+"DOMFragmentParser" [
+	color="0.1111111111, 1.0, 0.5"
+ ]
+"TestHTMLDOM" [
+	color="0., 1.0, 0.5"
+ ]
+"Purifier" [
+	color="0., 1.0, 0.5"
+ ]
+"SpecialScanner" [
+	color="0., 1.0, 0.5"
+ ]
+"ContentScanner" [
+	color="0., 1.0, 0.5"
+ ]
+}
