@@ -75,25 +75,25 @@ private str generateAssociations(M3 m, rel[loc, str]  pathNames, tuple[rel[loc, 
 	// Generalization
 	associationStr += generalization;
 	for (<from, to> <- m@extends) {
-         associationStr += "<prettyLoc(to, pathNames)> -\> <prettyLoc(from, pathNames)>\n";
+         associationStr += "<prettyLocDep(to, pathNames)> -\> <prettyLocDep(from, pathNames)>\n";
  	}
  	
  	// Realization
  	associationStr += realisation; 
  	for (<from, to> <- m@implements) {
- 		associationStr += "<prettyLoc(to, pathNames)> -\> <prettyLoc(from, pathNames)>\n";
+ 		associationStr += "<prettyLocDep(to, pathNames)> -\> <prettyLocDep(from, pathNames)>\n";
  	}
  	
  	// Associations
  	associationStr += association;
 	for (<from, to> <- relations[0]) {
- 		associationStr += "<prettyLoc(to, pathNames)> -\> <prettyLoc(from, pathNames)>\n";
+ 		associationStr += "<prettyLocDep(to, pathNames)> -\> <prettyLocDep(from, pathNames)>\n";
  	}
     
     // Dependency 
     associationStr += dependency;
     for (<from, to> <- relations[1]) {
- 		associationStr += "<prettyLoc(to, pathNames)> -\> <prettyLoc(from, pathNames)>\n";
+ 		associationStr += "<prettyLocDep(to, pathNames)> -\> <prettyLocDep(from, pathNames)>\n";
  	}
      
 	return associationStr;
@@ -201,6 +201,20 @@ private str generateMethods(loc cl, M3 m, rel[loc, str] pathNames) {
 }
 
 private str prettyLoc(loc c, rel[loc, str] pathNames) {
+	if (size(pathNames[c]) == 0) {
+		println("Warning - we do not have a pretty name for: ");
+		println("\"" + c.path[1..] + "\"");
+		return "";
+	}
+	return getOneFrom(pathNames[c]);
+}
+
+private str prettyLocDep(loc c, rel[loc, str] pathNames) {
+	if (size(pathNames[c]) == 0) {
+		println("Warning - we do not have a pretty dep name for: ");
+		println("\"" + c.path[1..] + "\"");
+		return "\"" + c.path[1..] + "\"";
+	}
 	return getOneFrom(pathNames[c]);
 }
 
@@ -235,6 +249,7 @@ private str prettify(TypeSymbol t, rel[loc, str] pathNames) {
 		case \boolean() : return "boolean";
 		case \void() : return "void";
 		case \object() : return "object";
+		case \byte() : return "byte";
 		// Base class/interface types
 		case \class(cn, ex) : 
 			return "<prettyLoc(cn, pathNames)>";
