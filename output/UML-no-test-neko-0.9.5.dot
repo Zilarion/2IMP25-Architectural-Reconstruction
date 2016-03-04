@@ -1,0 +1,351 @@
+digraph classes {
+ fontname = "Bitstream Vera Sans"
+ fontsize = 8
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "record" ]
+ edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
+"LocationItem" [
+	label="{
+ 		org/cyberneko/html/HTMLScanner/LocationItem|
+ 		|
+ 		
+	}"
+ ]
+"DOMParser" [
+	label="{
+ 		org/cyberneko/html/parsers/DOMParser|
+ 		|
+ 		
+	}"
+ ]
+"HTMLEntities" [
+	label="{
+ 		org/cyberneko/html/HTMLEntities|
+ 		|
+ 		
+	}"
+ ]
+"" [
+	label="{
+ 		test/UTF8BOMSkipper|
+ 		|
+ 		
+	}"
+ ]
+"Element" [
+	label="{
+ 		org/cyberneko/html/HTMLElements/Element|
+ 		|
+ 		
+	}"
+ ]
+"SecuritySupport" [
+	label="{
+ 		org/cyberneko/html/SecuritySupport|
+ 		|
+ 		
+	}"
+ ]
+"NamespaceBinder" [
+	label="{
+ 		org/cyberneko/html/filters/NamespaceBinder|
+ 		|
+ 		
+	}"
+ ]
+"ConfigurationError" [
+	label="{
+ 		org/cyberneko/html/ObjectFactory/ConfigurationError|
+ 		|
+ 		
+	}"
+ ]
+"" [
+	label="{
+ 		sample/HTMLSAXParser|
+ 		|
+ 		
+	}"
+ ]
+"SynthesizedItem" [
+	label="{
+ 		org/cyberneko/html/HTMLEventInfo/SynthesizedItem|
+ 		|
+ 		
+	}"
+ ]
+"" [
+	label="{
+ 		test/Tester|
+ 		|
+ 		
+	}"
+ ]
+"IntProperties" [
+	label="{
+ 		org/cyberneko/html/HTMLEntities/IntProperties|
+ 		|
+ 		
+	}"
+ ]
+"CurrentEntity" [
+	label="{
+ 		org/cyberneko/html/HTMLScanner/CurrentEntity|
+ 		|
+ 		
+	}"
+ ]
+"HTMLElements" [
+	label="{
+ 		org/cyberneko/html/HTMLElements|
+ 		|
+ 		
+	}"
+ ]
+"Entry" [
+	label="{
+ 		org/cyberneko/html/HTMLEntities/IntProperties/Entry|
+ 		|
+ 		
+	}"
+ ]
+"" [
+	label="{
+ 		sample/RemoveElements|
+ 		|
+ 		
+	}"
+ ]
+"HTMLAugmentations" [
+	label="{
+ 		org/cyberneko/html/HTMLAugmentations|
+ 		|
+ 		
+	}"
+ ]
+"ElementRemover" [
+	label="{
+ 		org/cyberneko/html/filters/ElementRemover|
+ 		|
+ 		
+	}"
+ ]
+"ErrorReporter" [
+	label="{
+ 		org/cyberneko/html/HTMLConfiguration/ErrorReporter|
+ 		|
+ 		
+	}"
+ ]
+"DefaultFilter" [
+	label="{
+ 		org/cyberneko/html/filters/DefaultFilter|
+ 		|
+ 		
+	}"
+ ]
+"Writer" [
+	label="{
+ 		org/cyberneko/html/filters/Writer|
+ 		|
+ 		
+	}"
+ ]
+"HTMLTagBalancer" [
+	label="{
+ 		org/cyberneko/html/HTMLTagBalancer|
+ 		|
+ 		
+	}"
+ ]
+"ObjectFactory" [
+	label="{
+ 		org/cyberneko/html/ObjectFactory|
+ 		|
+ 		
+	}"
+ ]
+"HTMLConfiguration" [
+	label="{
+ 		org/cyberneko/html/HTMLConfiguration|
+ 		|
+ 		
+	}"
+ ]
+"ElementList" [
+	label="{
+ 		org/cyberneko/html/HTMLElements/ElementList|
+ 		|
+ 		
+	}"
+ ]
+"SAXParser" [
+	label="{
+ 		org/cyberneko/html/parsers/SAXParser|
+ 		|
+ 		
+	}"
+ ]
+"" [
+	label="{
+ 		sample/TestHTMLDOMFragment|
+ 		|
+ 		
+	}"
+ ]
+"NamespaceSupport" [
+	label="{
+ 		org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport|
+ 		|
+ 		
+	}"
+ ]
+"Identity" [
+	label="{
+ 		org/cyberneko/html/filters/Identity|
+ 		|
+ 		
+	}"
+ ]
+"InfoStack" [
+	label="{
+ 		org/cyberneko/html/HTMLTagBalancer/InfoStack|
+ 		|
+ 		
+	}"
+ ]
+"SecuritySupport12" [
+	label="{
+ 		org/cyberneko/html/SecuritySupport12|
+ 		|
+ 		
+	}"
+ ]
+"" [
+	label="{
+ 		test/Writer|
+ 		|
+ 		
+	}"
+ ]
+"" [
+	label="{
+ 		sample/Script|
+ 		|
+ 		
+	}"
+ ]
+"HTMLScanner" [
+	label="{
+ 		org/cyberneko/html/HTMLScanner|
+ 		|
+ 		
+	}"
+ ]
+"Entry" [
+	label="{
+ 		org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport/Entry|
+ 		|
+ 		
+	}"
+ ]
+"PlaybackInputStream" [
+	label="{
+ 		org/cyberneko/html/HTMLScanner/PlaybackInputStream|
+ 		|
+ 		
+	}"
+ ]
+"Info" [
+	label="{
+ 		org/cyberneko/html/HTMLTagBalancer/Info|
+ 		|
+ 		
+	}"
+ ]
+"DOMFragmentParser" [
+	label="{
+ 		org/cyberneko/html/parsers/DOMFragmentParser|
+ 		|
+ 		
+	}"
+ ]
+"" [
+	label="{
+ 		sample/TestHTMLDOM|
+ 		|
+ 		
+	}"
+ ]
+"Purifier" [
+	label="{
+ 		org/cyberneko/html/filters/Purifier|
+ 		|
+ 		
+	}"
+ ]
+"SpecialScanner" [
+	label="{
+ 		org/cyberneko/html/HTMLScanner/SpecialScanner|
+ 		|
+ 		
+	}"
+ ]
+"ContentScanner" [
+	label="{
+ 		org/cyberneko/html/HTMLScanner/ContentScanner|
+ 		|
+ 		
+	}"
+ ]
+edge[arrowhead = "empty"; style= "solid"]
+ElementRemover -> DefaultFilter
+HTMLComponent -> XMLComponent
+Identity -> DefaultFilter
+NamespaceBinder -> DefaultFilter
+ConfigurationError -> Error
+PlaybackInputStream -> FilterInputStream
+SAXParser -> AbstractSAXParser
+SecuritySupport12 -> SecuritySupport
+Purifier -> DefaultFilter
+DOMParser -> XMLParserConfiguration
+Writer -> DefaultFilter
+HTMLConfiguration -> ParserConfigurationSettings
+edge[arrowhead = "empty"; style = "dashed"]
+SynthesizedItem -> HTMLEventInfo
+HTMLScanner -> XMLDocumentScanner
+"org/cyberneko/html/SecuritySupport12/getContextClassLoader()/$anonymous1" -> PrivilegedAction
+"org/cyberneko/html/SecuritySupport12/getSystemProperty(java/lang/String)/$anonymous1" -> PrivilegedAction
+"org/cyberneko/html/SecuritySupport12/getFileExists(java/io/File)/$anonymous1" -> PrivilegedAction
+NamespaceSupport -> NamespaceContext
+"org/cyberneko/html/SecuritySupport12/getLastModified(java/io/File)/$anonymous1" -> PrivilegedAction
+"org/cyberneko/html/SecuritySupport12/getResourceAsStream(java/lang/ClassLoader,java/lang/String)/$anonymous1" -> PrivilegedAction
+HTMLScanner -> XMLLocator
+LocationItem -> HTMLEventInfo
+HTMLTagBalancer -> XMLDocumentFilter
+DefaultFilter -> HTMLComponent
+HTMLTagBalancer -> HTMLComponent
+HTMLAugmentations -> Augmentations
+DefaultFilter -> XMLDocumentFilter
+DOMFragmentParser -> XMLDocumentHandler
+HTMLScanner -> HTMLComponent
+"org/cyberneko/html/SecuritySupport12/getSystemClassLoader()/$anonymous1" -> PrivilegedAction
+HTMLConfiguration -> XMLPullParserConfiguration
+ContentScanner -> Scanner
+SpecialScanner -> Scanner
+ErrorReporter -> HTMLErrorReporter
+"org/cyberneko/html/SecuritySupport12/getFileInputStream(java/io/File)/$anonymous1" -> PrivilegedExceptionAction
+"org/cyberneko/html/SecuritySupport12/getParentClassLoader(java/lang/ClassLoader)/$anonymous1" -> PrivilegedAction
+edge[arrowhead = "open"; style = "solid"]
+HTMLScanner -> CurrentEntity
+InfoStack -> Info
+HTMLScanner -> FilterInputStream
+NamespaceSupport -> Entry
+IntProperties -> Entry
+edge[arrowhead = "open"; style = "dashed"]
+ContentScanner -> LocationItem
+HTMLTagBalancer -> Info
+ObjectFactory -> SecuritySupport
+Writer -> ParserConfigurationSettings
+NamespaceSupport -> Entry
+IntProperties -> Entry
+}
