@@ -29,6 +29,7 @@ public void f(){
 	
 	// Visualize
 	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-eLib.dot|, true);
+	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-eLib-full.dot|, false);
 	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-eLib.neato|);
 	
 	m = createM3FromEclipseProject(|project://nekohtml-0.9.5//src//html//org/cyberneko//html|);
@@ -39,6 +40,7 @@ public void f(){
 	
 	// Visualize
 	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-0.9.5.dot|, true);
+	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-0.9.5-full.dot|, false);
 	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-0.9.5.neato|);
 	
 	m = createM3FromEclipseProject(|project://nekohtml-1.9.21//src//org//cyberneko//html|);
@@ -49,5 +51,6 @@ public void f(){
 	
 	// Visualize
 	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-1.9.21.dot|, true);
+	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-1.9.21-full.dot|, false);
 	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-1.9.21.neato|);
 }
