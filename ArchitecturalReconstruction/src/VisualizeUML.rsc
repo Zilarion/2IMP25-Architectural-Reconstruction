@@ -270,8 +270,7 @@ private str generateMethods(loc cl, M3 m, rel[loc, str] pathNames) {
 
 private str prettyLoc(loc c, rel[loc, str] pathNames) {
 	if (size(pathNames[c]) == 0) {
-		println("Warning - we do not have a pretty name for: ");
-		println("\"" + c.path[1..] + "\"");
+		//println("Warning - we do not have a pretty name for: ");
 		return "";
 	}
 	return getOneFrom(pathNames[c]);
@@ -279,8 +278,7 @@ private str prettyLoc(loc c, rel[loc, str] pathNames) {
 
 private str prettyLocDep(loc c, rel[loc, str] pathNames) {
 	if (size(pathNames[c]) == 0) {
-		println("Warning - we do not have a pretty dep name for: ");
-		println("\"" + c.path[1..] + "\"");
+		//println("Warning - we do not have a pretty dep name for: ");
 		return "\"" + c.path[1..] + "\"";
 	}
 	return getOneFrom(pathNames[c]);
@@ -293,11 +291,13 @@ private str applyModifier(str name, Modifier modifier) {
 		case \protected():
 			return "# <name>";
 		case \static():
-			return "_<name>_";
+			return  "_" + "<name>" + "_";
 		case \final():
 			return toUpperCase(name);
 		case \public():
 			return "+ <name>";
+		case \abstract():
+			return "//" + "<name>" + "//";
 	}
 	println("Warning - Unknown modifier <modifier>");
 	return "<name>";

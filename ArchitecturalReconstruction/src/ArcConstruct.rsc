@@ -19,38 +19,23 @@ import FlowLanguage;
 // ValueUI
 import util::ValueUI;
 
-public void f(){
+public void reconstruct(loc project, loc output) {
 	// Create m3 model and program
-	m = createM3FromEclipseProject(|project://eLib|);
-	p = createOFG(|project://eLib|);
+	m = createM3FromEclipseProject(project);
+	p = createOFG(project);
 	
 	// Get relations between classes from propagating the ofg
 	relations = getPropagations(p, m);
 	
 	// Visualize
-	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-eLib.dot|, true);
-	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-eLib-full.dot|, false);
-	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-eLib.neato|);
-	
-	m = createM3FromEclipseProject(|project://nekohtml-0.9.5//src//html//org/cyberneko//html|);
-	p = createOFG(|project://nekohtml-0.9.5//src//html//org/cyberneko//html|);
-	
-	// Get relations between classes from propagating the ofg
-	relations = getPropagations(p, m);
-	
-	// Visualize
-	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-0.9.5.dot|, true);
-	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-0.9.5-full.dot|, false);
-	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-0.9.5.neato|);
-	
-	m = createM3FromEclipseProject(|project://nekohtml-1.9.21//src//org//cyberneko//html|);
-	p = createOFG(|project://nekohtml-1.9.21//src//org//cyberneko//html|);
-	
-	// Get relations between classes from propagating the ofg
-	relations = getPropagations(p, m);
-	
-	// Visualize
-	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-1.9.21.dot|, true);
-	showDot(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-1.9.21-full.dot|, false);
-	showDotNeato(m, relations, |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/UML-neko-1.9.21.neato|);
+	showDot(m, relations, output + "UML-eLib.dot", true);
+	showDot(m, relations, output + "UML-eLib-full.dot", false);
+	showDotNeato(m, relations, output + "UML-eLib.neato");
+}
+
+public void reconstructA2(){
+	loc output = |home:///study/2imp25/2IMP25-Architectural-Reconstruction/output/|;
+	reconstruct(|project://eLib|, output);
+	reconstruct(|project://nekohtml-0.9.5//src//html//org/cyberneko//html|, output);
+	reconstruct(|project://nekohtml-1.9.21//src//org//cyberneko//html|, output);
 }
