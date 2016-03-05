@@ -26,19 +26,27 @@ OFG buildGraph(Program p)
 	+ { <m + "return", t> | call(t, _, _, m, _) <- p.statements }	// Method returns -> called from where
   	;
   	
-OFG prop(OFG g, rel[loc,loc] gen, rel[loc,loc] kill, bool back) {
-	  OFG IN = { };
-	  OFG OUT = gen + (IN - kill);
-	  gi = g<to,from>;
-	  set[loc] pred(loc n) = gi[n];
-	  set[loc] succ(loc n) = g[n];
-	  
-	  solve (IN, OUT) {
-		    IN = { <n,\o> | n <- carrier(g), p <- (back ? pred(n) : succ(n)), \o <- OUT[p] };
-		    OUT = gen + (IN - kill);
-	  }
-	  
-	  return OUT;
+OFG propFast(OFG g, rel[loc, loc] gen, rel[loc, loc] kill, bool back) {
+	OFG IN = {};
+	OFG OUT = gen + (IN - kill);
+	if (back) {
+		g = g<1, 0>;
+	}
+	
+	solve (IN, OUT) {
+		IN = g o OUT;
+		OUT = gen + IN - kill;
+	}
+	
+	return OUT;
+}
+
+OFG forwardProp(OFG g, rel[loc, loc] gen, rel[loc, loc] kill) {
+	return propFast(g, gen, kill, false);
+}
+
+OFG backwardProp(OFG g, rel[loc, loc] gen, rel[loc, loc] kill) {
+	return propFast(g, gen, kill, true);
 }
 
 tuple[rel[loc, loc], rel[loc, loc]] getPropagations(Program p, M3 m){
@@ -47,49 +55,53 @@ tuple[rel[loc, loc], rel[loc, loc]] getPropagations(Program p, M3 m){
 	associations = {};
 	dependencies = {};	
 	kill = {};
-	gen = {<class + "this", class> | newAssign(_, class, _, _) <- p.statements && class in classes(m)};
+	gen = {<class + "this", class> | newAssign(_, class, _, _) <- p.statements, class in classes(m)};
 	
 	//Forward
-	OFG forwardProp = prop(ofg, gen, kill, false);
-	associations += getAssociations(forwardProp, m);
-	dependencies += getDependencies(forwardProp, m);
-	
-	//Weakly forward uses the same gen variable, so is the same
-	OFG weaklyForwardProp = forwardProp;
-	associations += getAssociations(weaklyForwardProp, m);
-	dependencies += getDependencies(weaklyForwardProp, m);
-	
+	OFG forward = forwardProp(ofg, gen, kill);
+	associations += getAssociations(forward, m);
+	dependencies += getDependencies(forward, m);
 	
 	//Backward
-	OFG backwardProp = prop(ofg, gen, kill, true);
-	associations += getAssociations(backwardProp, m);
-	dependencies += getDependencies(backwardProp, m);
+	OFG backward = backwardProp(ofg, gen, kill);
+	associations += getAssociations(backward, m);
+	dependencies += getDependencies(backward, m);
+		
+	////Weakly forward uses the same gen variable
+	weaklyForwardGen = gen;
+	OFG weaklyForwardProp = forwardProp(ofg, weaklyForwardGen, kill);
+	
+	associations += getAssociations(weaklyForwardProp, m);
+	dependencies += getDependencies(weaklyForwardProp, m);
 	
 	//Weakly backward
 	weaklyBackwardGen = {<class, cast> | assign(_, cast, class) <- p.statements && cast in classes(m)};
 	weaklyBackwardGen += {<method + "return", cast> | call(_, cast, _, method, _) <- p.statements && cast in classes(m)};
-	OFG weaklyBackwardProp = prop(ofg, weaklyBackwardGen, kill, true);
+	OFG weaklyBackwardProp = backwardProp(ofg, weaklyBackwardGen, kill);
+	
 	associations += getAssociations(weaklyBackwardProp, m);
 	dependencies += getDependencies(weaklyBackwardProp, m);
 	
-	
-	//Find extended classes and remove superfluous relations
-	associations = findExtensions(associations, m);
-	dependencies = findExtensions(dependencies, m);
+	// Remove relations with external classes
+	associations = {<from, to> | <from, to> <- associations && from in classes(m) && to in classes(m)};
+	dependencies = {<from, to> | <from, to> <- dependencies && from in classes(m) && to in classes(m)}; 
 	
 	//Remove self-loops
 	associations = {<from, to> | <from, to> <- associations && from != to};
 	dependencies = {<from, to> | <from, to> <- dependencies && from != to};
+	
+	//Find extended classes and remove superfluous relations
+	associations = findExtensions(associations, m);
+	dependencies = findExtensions(dependencies, m);
 	
 	tuple[rel[loc, loc], rel[loc, loc]] relations = <associations, dependencies>;
 	return relations;
 }
 
 public rel[loc, loc] getAssociations(OFG ofg, M3 m){
-	rel[loc, loc] associations = {};
-	
-	rel[loc, loc] fields = {<field, class> | <field, class> <- ofg && isField(field)};
-	associations += {<from, class> | <from, to> <- m@containment && <to, class> <- fields && class in classes(m)};
+	// Get associations (A { B b;})
+	rel[loc, loc] fields = {<field, class> | <field, class> <- ofg, isField(field)};
+	rel[loc, loc] associations = {<from, class> | <from, to> <- m@containment, <to, class> <- fields, class in classes(m)};
 	
 	return associations;
 }
@@ -97,18 +109,22 @@ public rel[loc, loc] getAssociations(OFG ofg, M3 m){
 public rel[loc, loc] getDependencies(OFG ofg, M3 m){
 	rel[loc, loc] dependencies = {};
 	
-	//Get parameters
+	// Get all dependencies (class A { void f(B b) { b.g(); } })
+	//Get parameters and variables
 	par = {<from, to> | <from, to> <- ofg && from.scheme == "java+parameter"};
+	var = {<from, to> | <from, to> <- ofg && from.scheme == "java+variable" && to in classes(m)};
+	
 	//Get methods for parameters
-	mPar = {<from, to> | <from, to> <- m@containment && <a, to> <- par && a in classes(m)};
+	mPar = {<from, to> | <from, to> <- m@containment && <method, to> <- par && method in classes(m)};
 	dependencies += {<a, c> | <a, method> <- m@containment && <method, c> <- mPar};
 	
-	//Get variables
-	var = {<from, to> | <from, to> <- ofg && from.scheme == "java+variable" && to in classes(m)};
+	// Get all dependencies (class A { void f() { B b; … b.g(); } } )
 	//Get methods for variables
 	mVar = {<method, to> | <method, variable> <- m@containment && <variable, to> <- var};
 	dependencies += {<a, b> | <a, method> <- m@containment && <method, b> <- mVar};
 	
+	//text(mPar);
+	//text(mVar);
 	return dependencies;
 }
 

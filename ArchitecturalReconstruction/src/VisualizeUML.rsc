@@ -101,12 +101,12 @@ private str generateClass(loc cl, M3 m, rel[loc, str] pathNames, bool classOnly)
 }
 
 private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames) {
-	real maximum = toReal(getOneFrom({number | <l, number> <- nodeRelation, <l1, number2> <- nodeRelation, number > number2}));
+	real maximum = toReal(max({number | <l, number> <- nodeRelation, <l1, number2> <- nodeRelation, number > number2}));
 	real relValue = 0.0;
 	if (size(nodeRelation[cl]) > 0) {
 		relValue = toReal(getOneFrom(nodeRelation[cl]));
 	}
-	real h = (relValue / maximum) / 360 * 100;
+	real h = (1 - relValue / maximum) / 360 * 100;
 	return "\"<prettyLoc(cl, pathNames)>\" [
 		'	color=\"<h>, 1.0, 0.8\"
 		' ]
@@ -119,30 +119,35 @@ private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames) {
 private str generateAssociations(M3 m, rel[loc, str]  pathNames, tuple[rel[loc, loc], rel[loc, loc]] relations) {
 	str associationStr = "";
 	
+	generalizations = m@extends;
+	realisations = m@implements;
+ 	associations = relations[0] - realisations - generalizations;
+ 	dependencies = relations[1] - associations - realisations - generalizations;
+	
 	// Generalization
 	associationStr += generalization;
-	for (<from, to> <- m@extends) {
+	for (<from, to> <- generalizations, from in classes(m), to in classes(m), from != to) {
 		nodeRelation = incrementIntSet(to, nodeRelation);
     	associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
  	
  	// Realization
  	associationStr += realisation; 
- 	for (<from, to> <- m@implements) {
+ 	for (<from, to> <- realisations, from in classes(m), to in classes(m), from != to) {
 		nodeRelation = incrementIntSet(to, nodeRelation);
  		associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
  	
  	// Associations
  	associationStr += association;
-	for (<from, to> <- relations[0]) {
+	for (<from, to> <- associations, from in classes(m), to in classes(m), from != to) {
 		nodeRelation = incrementIntSet(to, nodeRelation);
  		associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
     
     // Dependency 
     associationStr += dependency;
-    for (<from, to> <- relations[1]) {
+    for (<from, to> <- dependencies, from in classes(m), to in classes(m), from != to) {
 		nodeRelation = incrementIntSet(to, nodeRelation);
  		associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
