@@ -1,0 +1,156 @@
+digraph classes {
+ fontname = "Bitstream Vera Sans"
+ fontsize = 8
+ overlap=false
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled" label=""]
+ edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
+edge[arrowhead = "empty"; style= "solid"]
+ElementRemover -> DefaultFilter
+NamespaceBinder -> DefaultFilter
+SecuritySupport12 -> SecuritySupport
+Purifier -> DefaultFilter
+Writer -> DefaultFilter
+Identity -> DefaultFilter
+Writer -> DefaultFilter
+Script -> DefaultFilter
+edge[arrowhead = "empty"; style = "dashed"]
+edge[arrowhead = "open"; style = "solid"]
+HTMLScanner -> CurrentEntity
+InfoStack -> Info
+HTMLScanner -> PlaybackInputStream
+NamespaceSupport -> Entry
+IntProperties -> Entry
+edge[arrowhead = "open"; style = "dashed"]
+ContentScanner -> LocationItem
+HTMLTagBalancer -> Info
+ObjectFactory -> SecuritySupport
+RemoveElements -> ElementRemover
+RemoveElements -> Writer
+TestHTMLDOMFragment -> DOMFragmentParser
+"LocationItem" [
+	color="0.2579365079400, 1.0, 0.8"
+ ]
+"DOMParser" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"HTMLEntities" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"UTF8BOMSkipper" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Element" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"SecuritySupport" [
+	color="0.238095238100, 1.0, 0.8"
+ ]
+"NamespaceBinder" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"ConfigurationError" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"HTMLSAXParser" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"SynthesizedItem" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Tester" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"IntProperties" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"CurrentEntity" [
+	color="0.2579365079400, 1.0, 0.8"
+ ]
+"HTMLElements" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Entry" [
+	color="0.2579365079400, 1.0, 0.8"
+ ]
+"RemoveElements" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"HTMLAugmentations" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"ElementRemover" [
+	color="0.2579365079400, 1.0, 0.8"
+ ]
+"ErrorReporter" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"DefaultFilter" [
+	color="0.138888888900, 1.0, 0.8"
+ ]
+"Writer" [
+	color="0.2579365079400, 1.0, 0.8"
+ ]
+"HTMLTagBalancer" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"ObjectFactory" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"HTMLConfiguration" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"ElementList" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"SAXParser" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"TestHTMLDOMFragment" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"NamespaceSupport" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Identity" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"InfoStack" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"SecuritySupport12" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Writer" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Script" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"HTMLScanner" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Entry" [
+	color="0.2579365079400, 1.0, 0.8"
+ ]
+"PlaybackInputStream" [
+	color="0.2579365079400, 1.0, 0.8"
+ ]
+"Info" [
+	color="0.238095238100, 1.0, 0.8"
+ ]
+"DOMFragmentParser" [
+	color="0.2579365079400, 1.0, 0.8"
+ ]
+"TestHTMLDOM" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Purifier" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"SpecialScanner" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"ContentScanner" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+}

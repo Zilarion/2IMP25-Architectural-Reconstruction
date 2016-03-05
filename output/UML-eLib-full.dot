@@ -1,0 +1,89 @@
+digraph classes {
+ fontname = "Bitstream Vera Sans"
+ fontsize = 8
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "record" ]
+ edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
+"InternalUser" [
+	label="{
+ 		InternalUser|
+ 		internalld : String\l|
+ 		+ InternalUser(phone : String, name : String, addr : String, id : String) : InternalUser\l+ authorizedUser() : boolean\l
+	}"
+ ]
+"Book" [
+	label="{
+ 		Book|
+ 		|
+ 		+ Book(tit : String, isbn : String, auth : String) : Book\l+ printInfo() : void\l
+	}"
+ ]
+"User" [
+	label="{
+ 		User|
+ 		fullName : String\laddress : String\lphoneNumber : String\l_nextUserCodeAvailable_ : int\luserCode : int\lloans : Collection\l|
+ 		+ User(phone : String, addr : String, name : String) : User\l+ addLoan(loan : Loan) : void\l+ authorizedUser() : boolean\l+ equals(obj : object, user : User) : boolean\l+ getAddress() : String\l+ getCode() : int\l+ getName() : String\l+ getPhone() : String\l+ numberOfLoans() : int\l+ printInfo(doc : Document, i : Iterator, loan : Loan) : void\l+ removeLoan(loan : Loan) : void\l
+	}"
+ ]
+"Loan" [
+	label="{
+ 		Loan|
+ 		user : User\ldocument : Document\l|
+ 		+ Loan(doc : Document, usr : User) : Loan\l+ equals(loan : Loan, obj : object) : boolean\l+ getDocument() : Document\l+ getUser() : User\l+ print() : void\l
+	}"
+ ]
+"TechnicalReport" [
+	label="{
+ 		TechnicalReport|
+ 		refNo : String\l|
+ 		+ TechnicalReport(ref : String, auth : String, tit : String) : TechnicalReport\l+ authorizedLoan(user : User) : boolean\l+ getRefNo() : String\l+ printInfo() : void\l# printRefNo() : void\l
+	}"
+ ]
+"Document" [
+	label="{
+ 		Document|
+ 		title : String\lloan : Loan\lauthors : String\lISBNCode : String\l_nextDocumentCodeAvailable_ : int\ldocumentCode : int\l|
+ 		+ Document(tit : String) : Document\l+ addLoan(ln : Loan) : void\l+ authorizedLoan(user : User) : boolean\l+ equals(doc : Document, obj : object) : boolean\l+ getAuthors() : String\l+ getBorrower() : User\l+ getCode() : int\l+ getISBN() : String\l+ getTitle() : String\l+ isAvailable() : boolean\l+ isOut() : boolean\l+ printInfo() : void\l+ removeLoan() : void\l# printAuthors() : void\l# printAvailability(user : User) : void\l# printGeneralInfo() : void\l# printHeader() : void\l
+	}"
+ ]
+"Library" [
+	label="{
+ 		Library|
+ 		MAX_NUMBER_OF_LOANS : int\ldocuments : Map\lloans : Collection\lusers : Map\l|
+ 		+ addDocument(doc : Document) : boolean\l+ addUser(user : User) : boolean\l+ borrowDocument(loan : Loan, doc : Document, user : User) : boolean\l+ getDocument(docCode : int) : Document\l+ getUser(userCode : int) : User\l+ isHolding(doc : Document, user : User) : boolean\l+ printAllLoans(i : Iterator, loan : Loan) : void\l+ printDocumentInfo(doc : Document) : void\l+ printUserInfo(user : User) : void\l+ removeDocument(docCode : int, doc : Document) : boolean\l+ removeUser(userCode : int, user : User) : boolean\l+ returnDocument(doc : Document, user : User, loan : Loan) : boolean\l+ searchDocumentByAuthors(doc : Document, docsFound : List, i : Iterator, authors : String) : List\l+ searchDocumentByISBN(isbn : String, i : Iterator, doc : Document) : int\l+ searchDocumentByTitle(title : String, doc : Document, docsFound : List, i : Iterator) : List\l+ searchUser(name : String, i : Iterator, user : User, usersFound : List) : List\l- addLoan(user : User, doc : Document, loan : Loan) : void\l- removeLoan(loan : Loan, doc : Document, user : User) : void\l
+	}"
+ ]
+"Journal" [
+	label="{
+ 		Journal|
+ 		|
+ 		+ Journal(tit : String) : Journal\l+ authorizedLoan(user : User) : boolean\l
+	}"
+ ]
+"Main" [
+	label="{
+ 		Main|
+ 		_lib_ : Library\l|
+ 		+ _addBook_(doc : Document, args : String[1], cmd : String) : void\l+ _addJournal_(doc : Document, cmd : String, args : String[1]) : void\l+ _addReport_(args : String[1], doc : Document, cmd : String) : void\l+ _addUser_(args : String[1], cmd : String, user : User) : void\l+ _addintUser_(user : User, cmd : String, args : String[1]) : void\l+ _borrowDoc_(doc : Document, user : User, cmd : String, args : String[1]) : void\l+ _dispatchCommand_(cmd : String) : void\l+ _getArgs_(args : String[1], s : String, i : int, cmd : String) : String[1]\l+ _isHolding_(user : User, doc : Document, cmd : String, args : String[1]) : void\l+ _main_(s : String, arg : String, e : IOException, in : BufferedReader) : void\l+ _printDoc_(doc : Document, args : String[1], cmd : String) : void\l+ _printHeader_() : void\l+ _printUser_(cmd : String, args : String[1], user : User) : void\l+ _returnDoc_(user : User, doc : Document, cmd : String, args : String[1]) : void\l+ _rmDoc_(doc : Document, cmd : String, args : String[1]) : void\l+ _rmUser_(args : String[1], user : User, cmd : String) : void\l+ _searchDoc_(i : Iterator, doc : Document, docs : List, args : String[1], cmd : String) : void\l+ _searchUser_(cmd : String, users : List, i : Iterator, user : User, args : String[1]) : void\l
+	}"
+ ]
+edge[arrowhead = "empty"; style= "solid"]
+InternalUser -> User
+Book -> Document
+TechnicalReport -> Document
+Journal -> Document
+edge[arrowhead = "empty"; style = "dashed"]
+edge[arrowhead = "open"; style = "solid"]
+Loan -> Document
+Loan -> User
+User -> Loan
+Library -> Document
+Library -> Loan
+Document -> Loan
+Library -> User
+edge[arrowhead = "open"; style = "dashed"]
+User -> Document
+Main -> Loan
+Main -> User
+Main -> Document
+Document -> User
+}

@@ -1,0 +1,54 @@
+digraph classes {
+ fontname = "Bitstream Vera Sans"
+ fontsize = 8
+ overlap=false
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled" label=""]
+ edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
+edge[arrowhead = "empty"; style= "solid"]
+InternalUser -> User
+Book -> Document
+TechnicalReport -> Document
+Journal -> Document
+edge[arrowhead = "empty"; style = "dashed"]
+edge[arrowhead = "open"; style = "solid"]
+Loan -> Document
+Loan -> User
+User -> Loan
+Library -> Document
+Library -> Loan
+Document -> Loan
+Library -> User
+edge[arrowhead = "open"; style = "dashed"]
+User -> Document
+Main -> Loan
+Main -> User
+Main -> Document
+Document -> User
+"InternalUser" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Book" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"User" [
+	color="0.0793650793600, 1.0, 0.8"
+ ]
+"Loan" [
+	color="0.119047619100, 1.0, 0.8"
+ ]
+"TechnicalReport" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Document" [
+	color="0., 1.0, 0.8"
+ ]
+"Library" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Journal" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+"Main" [
+	color="0.277777777800, 1.0, 0.8"
+ ]
+}
