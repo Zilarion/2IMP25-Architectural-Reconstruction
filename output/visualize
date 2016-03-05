@@ -4,11 +4,11 @@
 # Loop over all .dot files
 for i in *.dot; do 
 	echo Running dot on: $i
-	dot -Tpng $i -o $i.png
+	dot -Tpng:quartz $i -o $i.png
 done
 
 # Loop over all .neato files
 for i in *.neato; do
 	echo Running neato on: $i
-	neato -Tpng $i -o $i.png
+	neato -Tpng:quartz $i -o $i.png
 done
