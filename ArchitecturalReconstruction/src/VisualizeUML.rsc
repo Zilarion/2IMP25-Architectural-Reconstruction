@@ -164,7 +164,7 @@ private str generateAssociations(M3 m, rel[loc, str]  pathNames, tuple[rel[loc, 
 		nodeRelation = incrementIntSet(to, nodeRelation);
  		associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
- 	text(nodeRelation);
+
 	return associationStr;
 }
 
