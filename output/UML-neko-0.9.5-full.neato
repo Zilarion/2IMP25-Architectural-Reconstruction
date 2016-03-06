@@ -1,0 +1,198 @@
+digraph classes {
+ fontname = "Bitstream Vera Sans"
+ fontsize = 8
+ overlap=false
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled"]
+ edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
+edge[arrowhead = "empty"; style= "solid"]
+ElementRemover -> DefaultFilter
+NamespaceBinder -> DefaultFilter
+SecuritySupport12 -> SecuritySupport
+Purifier -> DefaultFilter
+Writer -> DefaultFilter
+Identity -> DefaultFilter
+Writer -> DefaultFilter
+Script -> DefaultFilter
+edge[arrowhead = "empty"; style = "dashed"]
+edge[arrowhead = "open"; style = "solid"]
+HTMLScanner -> CurrentEntity
+InfoStack -> Info
+HTMLScanner -> PlaybackInputStream
+NamespaceSupport -> Entry
+IntProperties -> Entry
+edge[arrowhead = "open"; style = "dashed"]
+ContentScanner -> LocationItem
+HTMLTagBalancer -> Info
+ObjectFactory -> SecuritySupport
+RemoveElements -> ElementRemover
+RemoveElements -> Writer
+TestHTMLDOMFragment -> DOMFragmentParser
+"LocationItem" [
+	color="0.227920227900, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLScanner/LocationItem"
+ ]
+"DOMParser" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/parsers/DOMParser"
+ ]
+"HTMLEntities" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLEntities"
+ ]
+"UTF8BOMSkipper" [
+	color="0.277777777800, 1.0, 0.8"
+	label="test/UTF8BOMSkipper"
+ ]
+"Element" [
+	color="0.220797720800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLElements/Element"
+ ]
+"SecuritySupport" [
+	color="0.206552706600, 1.0, 0.8"
+	label="org/cyberneko/html/SecuritySupport"
+ ]
+"NamespaceBinder" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/filters/NamespaceBinder"
+ ]
+"ConfigurationError" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/ObjectFactory/ConfigurationError"
+ ]
+"HTMLSAXParser" [
+	color="0.277777777800, 1.0, 0.8"
+	label="sample/HTMLSAXParser"
+ ]
+"SynthesizedItem" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLEventInfo/SynthesizedItem"
+ ]
+"Tester" [
+	color="0.277777777800, 1.0, 0.8"
+	label="test/Tester"
+ ]
+"IntProperties" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLEntities/IntProperties"
+ ]
+"CurrentEntity" [
+	color="0.242165242200, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLScanner/CurrentEntity"
+ ]
+"HTMLElements" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLElements"
+ ]
+"Entry" [
+	color="0.242165242200, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLEntities/IntProperties/Entry"
+ ]
+"RemoveElements" [
+	color="0.277777777800, 1.0, 0.8"
+	label="sample/RemoveElements"
+ ]
+"HTMLAugmentations" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLAugmentations"
+ ]
+"ElementRemover" [
+	color="0.242165242200, 1.0, 0.8"
+	label="org/cyberneko/html/filters/ElementRemover"
+ ]
+"ErrorReporter" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLConfiguration/ErrorReporter"
+ ]
+"DefaultFilter" [
+	color="0., 1.0, 0.8"
+	label="org/cyberneko/html/filters/DefaultFilter"
+ ]
+"Writer" [
+	color="0.242165242200, 1.0, 0.8"
+	label="org/cyberneko/html/filters/Writer"
+ ]
+"HTMLTagBalancer" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLTagBalancer"
+ ]
+"ObjectFactory" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/ObjectFactory"
+ ]
+"HTMLConfiguration" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLConfiguration"
+ ]
+"ElementList" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLElements/ElementList"
+ ]
+"SAXParser" [
+	color="0.2635327635300, 1.0, 0.8"
+	label="org/cyberneko/html/parsers/SAXParser"
+ ]
+"TestHTMLDOMFragment" [
+	color="0.277777777800, 1.0, 0.8"
+	label="sample/TestHTMLDOMFragment"
+ ]
+"NamespaceSupport" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport"
+ ]
+"Identity" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/filters/Identity"
+ ]
+"InfoStack" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLTagBalancer/InfoStack"
+ ]
+"SecuritySupport12" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/SecuritySupport12"
+ ]
+"Writer" [
+	color="0.277777777800, 1.0, 0.8"
+	label="test/Writer"
+ ]
+"Script" [
+	color="0.277777777800, 1.0, 0.8"
+	label="sample/Script"
+ ]
+"HTMLScanner" [
+	color="0.249287749300, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLScanner"
+ ]
+"Entry" [
+	color="0.242165242200, 1.0, 0.8"
+	label="org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport/Entry"
+ ]
+"PlaybackInputStream" [
+	color="0.242165242200, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLScanner/PlaybackInputStream"
+ ]
+"Info" [
+	color="0.206552706600, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLTagBalancer/Info"
+ ]
+"DOMFragmentParser" [
+	color="0.227920227900, 1.0, 0.8"
+	label="org/cyberneko/html/parsers/DOMFragmentParser"
+ ]
+"TestHTMLDOM" [
+	color="0.277777777800, 1.0, 0.8"
+	label="sample/TestHTMLDOM"
+ ]
+"Purifier" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/filters/Purifier"
+ ]
+"SpecialScanner" [
+	color="0.277777777800, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLScanner/SpecialScanner"
+ ]
+"ContentScanner" [
+	color="0.249287749300, 1.0, 0.8"
+	label="org/cyberneko/html/HTMLScanner/ContentScanner"
+ ]
+}

@@ -30,7 +30,8 @@ public void reconstruct(loc project, loc output, str filename) {
 	// Visualize
 	showDot(m, relations, output + (filename + ".dot"), true);
 	showDot(m, relations, output + (filename + "-full.dot"), false);
-	showDotNeato(m, relations, output + (filename + ".neato"));
+	showDotNeato(m, relations, output + (filename + ".neato"), false);
+	showDotNeato(m, relations, output + (filename + "-full.neato"), true);
 }
 
 public void reconstructA2(){

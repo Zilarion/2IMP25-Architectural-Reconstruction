@@ -63,7 +63,7 @@ public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bo
     return dotStr;
 }
 
-public str createDotFileNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations) {
+public str createDotFileNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool fullNames) {
 	str dotStr = dotSettingsNeato;
 	
 	pathNames = invert(m@names);
@@ -73,7 +73,7 @@ public str createDotFileNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relation
 	
 	// Generate all class blocks
 	for (cl <- classes(m)) {
-		dotStr += generateClassNeato(cl, m, pathNames);
+		dotStr += generateClassNeato(cl, m, pathNames, fullNames);
 	}
 	
 	dotStr += "}";
@@ -100,17 +100,20 @@ private str generateClass(loc cl, M3 m, rel[loc, str] pathNames, bool classOnly)
 		'";
 }
 
-private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames) {
+private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames, bool fullNames) {
 	real maximum = toReal(max({number | <l, number> <- nodeRelation, <l1, number2> <- nodeRelation, number > number2}));
 	real relValue = 0.0;
 	if (size(nodeRelation[cl]) > 0) {
 		relValue = toReal(getOneFrom(nodeRelation[cl]));
 	}
-	str hString = hashFunction(cl.path[1..]);
+	str hString = cl.path[1..];
+	if (!fullNames) {
+		hString = hashFunction(hString);
+	}
 	real h = (1 - relValue / maximum) / 360 * 100;
 	return "\"<prettyLoc(cl, pathNames)>\" [
 		'	color=\"<h>, 1.0, 0.8\"
-		'	label=<hString>
+		'	label=\"<hString>\"
 		' ]
 		'";
 }
@@ -359,6 +362,6 @@ public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out
   writeFile(out, createDotFile(m, relations, classOnly));
 }
 
-public void showDotNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out) {
-  writeFile(out, createDotFileNeato(m, relations));
+public void showDotNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out, bool fullNames) {
+  writeFile(out, createDotFileNeato(m, relations, fullNames));
 }
