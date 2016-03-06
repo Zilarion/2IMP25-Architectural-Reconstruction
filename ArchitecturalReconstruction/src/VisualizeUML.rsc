@@ -38,7 +38,7 @@ str dotSettings = "digraph classes {
 				 ' fontname = \"Bitstream Vera Sans\"
 				 ' fontsize = 8
 				 ' overlap=false
-				 ' node [ fontname = \"Bitstream Vera Sans\" fontsize = 8 shape = \"circle\" style=\"filled\" label=\"\"]
+				 ' node [ fontname = \"Bitstream Vera Sans\" fontsize = 8 shape = \"circle\" style=\"filled\"]
 				 ' edge [ fontname = \"Bitstream Vera Sans\" fontsize = 8 ]
 				 '";
 			        
@@ -106,11 +106,17 @@ private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames) {
 	if (size(nodeRelation[cl]) > 0) {
 		relValue = toReal(getOneFrom(nodeRelation[cl]));
 	}
+	str hString = hashFunction(cl.path[1..]);
 	real h = (1 - relValue / maximum) / 360 * 100;
 	return "\"<prettyLoc(cl, pathNames)>\" [
 		'	color=\"<h>, 1.0, 0.8\"
+		'	label=<hString>
 		' ]
 		'";
+}
+
+private str hashFunction(str input) {
+    return (input[size(input)-2..size(input)] + toString(size(input)));
 }
 
 /*

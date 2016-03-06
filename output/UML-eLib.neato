@@ -2,241 +2,62 @@ digraph classes {
  fontname = "Bitstream Vera Sans"
  fontsize = 8
  overlap=false
- node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled" label=""]
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled"]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
 edge[arrowhead = "empty"; style= "solid"]
-ElementRemover -> DefaultFilter
-XercesBridge_2_1 -> XercesBridge
-XercesBridge_2_2 -> XercesBridge
-XercesBridge_2_3 -> XercesBridge_2_2
-Purifier -> DefaultFilter
-Writer -> DefaultFilter
-MyContentScanner -> ContentScanner
-XercesBridge_2_0 -> XercesBridge
-Script -> DefaultFilter
-Identity -> DefaultFilter
-NamespaceBinder -> DefaultFilter
-Writer -> DefaultFilter
-EvaluateInputSourceFilter -> DefaultFilter
-Minimal -> DefaultFilter
-SecuritySupport12 -> SecuritySupport
-InfiniteLoopScanner -> HTMLScanner
+InternalUser -> User
+Book -> Document
+TechnicalReport -> Document
+Journal -> Document
 edge[arrowhead = "empty"; style = "dashed"]
 edge[arrowhead = "open"; style = "solid"]
-HTMLScanner -> CurrentEntity
-Info -> Element
-LostText -> Entry
-HTMLTagBalancer -> ElementEntry
-InfoStack -> Info
-HTMLScanner -> PlaybackInputStream
-HTMLScanner -> ContentScanner
-NamespaceSupport -> Entry
-IntProperties -> Entry
+Loan -> Document
+Loan -> User
+User -> Loan
+Library -> Document
+Library -> Loan
+Document -> Loan
+Library -> User
 edge[arrowhead = "open"; style = "dashed"]
-HTMLTagBalancer -> Info
-ObjectFactory -> SecuritySupport
-RemoveElements -> ElementRemover
-HTMLElements -> Element
-RemoveElements -> Writer
-HTMLScannerTest -> EvaluateInputSourceFilter
-TestHTMLDOMFragment -> DOMFragmentParser
-LocatorEncodingTest -> SAXParser
-ContentScanner -> LocationItem
-HTMLScannerTest -> HTMLScanner
-ContentScanner -> Element
-HTMLTagBalancingListenerTest -> TestParser
-HTMLConfiguration -> XercesBridge
-ObjectFactory -> XercesBridge
-HTMLTagBalancer -> Element
-DOMFragmentParserTest -> DOMFragmentParser
-HTMLAugmentations -> LocationItem
-"DOMFragmentParserTest" [
+User -> Document
+Main -> Loan
+Main -> User
+Main -> Document
+Document -> User
+"InternalUser" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er12
  ]
-"HTMLEntities" [
+"Book" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ok4
  ]
-"Entry" [
-	color="0.260416666700, 1.0, 0.8"
+"User" [
+	color="0.0793650793600, 1.0, 0.8"
+	label=er4
  ]
-"XercesBridge_2_2" [
-	color="0.260416666700, 1.0, 0.8"
+"Loan" [
+	color="0.119047619100, 1.0, 0.8"
+	label=an4
  ]
-"FragmentContextStackTest" [
+"TechnicalReport" [
 	color="0.277777777800, 1.0, 0.8"
+	label=rt15
  ]
-"InfiniteLoopScanner" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"IntProperties" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"CurrentEntity" [
-	color="0.243055555600, 1.0, 0.8"
- ]
-"HTMLElements" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"Entry" [
-	color="0.243055555600, 1.0, 0.8"
- ]
-"RemoveElements" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"LocationItem" [
-	color="0.225694444400, 1.0, 0.8"
- ]
-"MyContentScanner" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"HTMLAugmentations" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"ElementRemover" [
-	color="0.243055555600, 1.0, 0.8"
- ]
-"HTMLScannerTest" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"ErrorReporter" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"DefaultFilter" [
+"Document" [
 	color="0., 1.0, 0.8"
+	label=nt8
  ]
-"Writer" [
-	color="0.243055555600, 1.0, 0.8"
- ]
-"HTMLTagBalancer" [
+"Library" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ry7
  ]
-"DOMParser" [
+"Journal" [
 	color="0.277777777800, 1.0, 0.8"
+	label=al7
  ]
-"CanonicalTest" [
+"Main" [
 	color="0.277777777800, 1.0, 0.8"
- ]
-"HTMLErrorHandler" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"ObjectFactory" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"HTMLConfiguration" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"ElementList" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"UTF8BOMSkipper" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"Element" [
-	color="0.208333333300, 1.0, 0.8"
- ]
-"SAXParser" [
-	color="0.260416666700, 1.0, 0.8"
- ]
-"HTMLTagBalancingListenerTest" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"TestHTMLDOMFragment" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"XercesBridge" [
-	color="0.190972222200, 1.0, 0.8"
- ]
-"TestParser" [
-	color="0.260416666700, 1.0, 0.8"
- ]
-"SecuritySupport" [
-	color="0.208333333300, 1.0, 0.8"
- ]
-"LostText" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"NamespaceSupport" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"Script" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"Identity" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"InfoStack" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"SecuritySupport12" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"NamespaceBinder" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"Writer" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"HTMLScanner" [
-	color="0.243055555600, 1.0, 0.8"
- ]
-"XercesBridge_2_0" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"Entry" [
-	color="0.243055555600, 1.0, 0.8"
- ]
-"PlaybackInputStream" [
-	color="0.243055555600, 1.0, 0.8"
- ]
-"XercesBridge_2_1" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"ConfigurationError" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"Info" [
-	color="0.208333333300, 1.0, 0.8"
- ]
-"XercesBridge_2_3" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"DOMFragmentParser" [
-	color="0.225694444400, 1.0, 0.8"
- ]
-"WriterTest" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"HTMLSAXParser" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"HeadNamespaceBug" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"EvaluateInputSourceFilter" [
-	color="0.260416666700, 1.0, 0.8"
- ]
-"Minimal" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"SynthesizedItem" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"LocatorEncodingTest" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"ElementEntry" [
-	color="0.260416666700, 1.0, 0.8"
- ]
-"TestHTMLDOM" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"Purifier" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"SpecialScanner" [
-	color="0.277777777800, 1.0, 0.8"
- ]
-"ContentScanner" [
-	color="0.243055555600, 1.0, 0.8"
+	label=in4
  ]
 }

@@ -2,7 +2,7 @@ digraph classes {
  fontname = "Bitstream Vera Sans"
  fontsize = 8
  overlap=false
- node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled" label=""]
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled"]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
 edge[arrowhead = "empty"; style= "solid"]
 ElementRemover -> DefaultFilter
@@ -52,191 +52,254 @@ DOMFragmentParserTest -> DOMFragmentParser
 HTMLAugmentations -> LocationItem
 "DOMFragmentParserTest" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st40
  ]
 "HTMLEntities" [
 	color="0.277777777800, 1.0, 0.8"
+	label=es31
  ]
 "Entry" [
 	color="0.260416666700, 1.0, 0.8"
+	label=ry33
  ]
 "XercesBridge_2_2" [
 	color="0.260416666700, 1.0, 0.8"
+	label=_248
  ]
 "FragmentContextStackTest" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st43
  ]
 "InfiniteLoopScanner" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er54
  ]
 "IntProperties" [
 	color="0.277777777800, 1.0, 0.8"
+	label=es45
  ]
 "CurrentEntity" [
 	color="0.243055555600, 1.0, 0.8"
+	label=ty44
  ]
 "HTMLElements" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ts31
  ]
 "Entry" [
 	color="0.243055555600, 1.0, 0.8"
+	label=ry51
  ]
 "RemoveElements" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ts21
  ]
 "LocationItem" [
 	color="0.225694444400, 1.0, 0.8"
+	label=em43
  ]
 "MyContentScanner" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er71
  ]
 "HTMLAugmentations" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ns36
  ]
 "ElementRemover" [
 	color="0.243055555600, 1.0, 0.8"
+	label=er41
  ]
 "HTMLScannerTest" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st34
  ]
 "ErrorReporter" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er50
  ]
 "DefaultFilter" [
 	color="0., 1.0, 0.8"
+	label=er40
  ]
 "Writer" [
 	color="0.243055555600, 1.0, 0.8"
+	label=er33
  ]
 "HTMLTagBalancer" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er34
  ]
 "DOMParser" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er36
  ]
 "CanonicalTest" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st32
  ]
 "HTMLErrorHandler" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er35
  ]
 "ObjectFactory" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ry32
  ]
 "HTMLConfiguration" [
 	color="0.277777777800, 1.0, 0.8"
+	label=on36
  ]
 "ElementList" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st43
  ]
 "UTF8BOMSkipper" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er33
  ]
 "Element" [
 	color="0.208333333300, 1.0, 0.8"
+	label=nt39
  ]
 "SAXParser" [
 	color="0.260416666700, 1.0, 0.8"
+	label=er36
  ]
 "HTMLTagBalancingListenerTest" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st47
  ]
 "TestHTMLDOMFragment" [
 	color="0.277777777800, 1.0, 0.8"
+	label=nt26
  ]
 "XercesBridge" [
 	color="0.190972222200, 1.0, 0.8"
+	label=ge44
  ]
 "TestParser" [
 	color="0.260416666700, 1.0, 0.8"
+	label=er29
  ]
 "SecuritySupport" [
 	color="0.208333333300, 1.0, 0.8"
+	label=rt34
  ]
 "LostText" [
 	color="0.277777777800, 1.0, 0.8"
+	label=xt27
  ]
 "NamespaceSupport" [
 	color="0.277777777800, 1.0, 0.8"
+	label=rt59
  ]
 "Script" [
 	color="0.277777777800, 1.0, 0.8"
+	label=pt13
  ]
 "Identity" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ty35
  ]
 "InfoStack" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ck44
  ]
 "SecuritySupport12" [
 	color="0.277777777800, 1.0, 0.8"
+	label=1236
  ]
 "NamespaceBinder" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er42
  ]
 "Writer" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er25
  ]
 "HTMLScanner" [
 	color="0.243055555600, 1.0, 0.8"
+	label=er30
  ]
 "XercesBridge_2_0" [
 	color="0.277777777800, 1.0, 0.8"
+	label=_048
  ]
 "Entry" [
 	color="0.243055555600, 1.0, 0.8"
+	label=ry65
  ]
 "PlaybackInputStream" [
 	color="0.243055555600, 1.0, 0.8"
+	label=am50
  ]
 "XercesBridge_2_1" [
 	color="0.277777777800, 1.0, 0.8"
+	label=_148
  ]
 "ConfigurationError" [
 	color="0.277777777800, 1.0, 0.8"
+	label=or51
  ]
 "Info" [
 	color="0.208333333300, 1.0, 0.8"
+	label=fo39
  ]
 "XercesBridge_2_3" [
 	color="0.277777777800, 1.0, 0.8"
+	label=_348
  ]
 "DOMFragmentParser" [
 	color="0.225694444400, 1.0, 0.8"
+	label=er44
  ]
 "WriterTest" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st37
  ]
 "HTMLSAXParser" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er20
  ]
 "HeadNamespaceBug" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ug35
  ]
 "EvaluateInputSourceFilter" [
 	color="0.260416666700, 1.0, 0.8"
+	label=er60
  ]
 "Minimal" [
 	color="0.277777777800, 1.0, 0.8"
+	label=al14
  ]
 "SynthesizedItem" [
 	color="0.277777777800, 1.0, 0.8"
+	label=em48
  ]
 "LocatorEncodingTest" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st38
  ]
 "ElementEntry" [
 	color="0.260416666700, 1.0, 0.8"
+	label=ry47
  ]
 "TestHTMLDOM" [
 	color="0.277777777800, 1.0, 0.8"
+	label=OM18
  ]
 "Purifier" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er35
  ]
 "SpecialScanner" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er45
  ]
 "ContentScanner" [
 	color="0.243055555600, 1.0, 0.8"
+	label=er45
  ]
 }

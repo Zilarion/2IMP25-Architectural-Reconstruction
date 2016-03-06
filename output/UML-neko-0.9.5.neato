@@ -2,7 +2,7 @@ digraph classes {
  fontname = "Bitstream Vera Sans"
  fontsize = 8
  overlap=false
- node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled" label=""]
+ node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled"]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
 edge[arrowhead = "empty"; style= "solid"]
 ElementRemover -> DefaultFilter
@@ -28,129 +28,171 @@ RemoveElements -> ElementRemover
 RemoveElements -> Writer
 TestHTMLDOMFragment -> DOMFragmentParser
 "LocationItem" [
-	color="0.227920227900, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
+	label=em43
  ]
 "DOMParser" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er36
  ]
 "HTMLEntities" [
 	color="0.277777777800, 1.0, 0.8"
+	label=es31
  ]
 "UTF8BOMSkipper" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er19
  ]
 "Element" [
-	color="0.220797720800, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
+	label=nt39
  ]
 "SecuritySupport" [
-	color="0.206552706600, 1.0, 0.8"
+	color="0.198412698400, 1.0, 0.8"
+	label=rt34
  ]
 "NamespaceBinder" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er42
  ]
 "ConfigurationError" [
 	color="0.277777777800, 1.0, 0.8"
+	label=or51
  ]
 "HTMLSAXParser" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er20
  ]
 "SynthesizedItem" [
 	color="0.277777777800, 1.0, 0.8"
+	label=em48
  ]
 "Tester" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er11
  ]
 "IntProperties" [
 	color="0.277777777800, 1.0, 0.8"
+	label=es45
  ]
 "CurrentEntity" [
-	color="0.242165242200, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
+	label=ty44
  ]
 "HTMLElements" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ts31
  ]
 "Entry" [
-	color="0.242165242200, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
+	label=ry51
  ]
 "RemoveElements" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ts21
  ]
 "HTMLAugmentations" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ns36
  ]
 "ElementRemover" [
-	color="0.242165242200, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
+	label=er41
  ]
 "ErrorReporter" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er50
  ]
 "DefaultFilter" [
 	color="0., 1.0, 0.8"
+	label=er40
  ]
 "Writer" [
-	color="0.242165242200, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
+	label=er33
  ]
 "HTMLTagBalancer" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er34
  ]
 "ObjectFactory" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ry32
  ]
 "HTMLConfiguration" [
 	color="0.277777777800, 1.0, 0.8"
+	label=on36
  ]
 "ElementList" [
 	color="0.277777777800, 1.0, 0.8"
+	label=st43
  ]
 "SAXParser" [
-	color="0.2635327635300, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
+	label=er36
  ]
 "TestHTMLDOMFragment" [
 	color="0.277777777800, 1.0, 0.8"
+	label=nt26
  ]
 "NamespaceSupport" [
 	color="0.277777777800, 1.0, 0.8"
+	label=rt59
  ]
 "Identity" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ty35
  ]
 "InfoStack" [
 	color="0.277777777800, 1.0, 0.8"
+	label=ck44
  ]
 "SecuritySupport12" [
 	color="0.277777777800, 1.0, 0.8"
+	label=1236
  ]
 "Writer" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er11
  ]
 "Script" [
 	color="0.277777777800, 1.0, 0.8"
+	label=pt13
  ]
 "HTMLScanner" [
-	color="0.249287749300, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
+	label=er30
  ]
 "Entry" [
-	color="0.242165242200, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
+	label=ry65
  ]
 "PlaybackInputStream" [
-	color="0.242165242200, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
+	label=am50
  ]
 "Info" [
-	color="0.206552706600, 1.0, 0.8"
+	color="0.198412698400, 1.0, 0.8"
+	label=fo39
  ]
 "DOMFragmentParser" [
-	color="0.227920227900, 1.0, 0.8"
+	color="0.238095238100, 1.0, 0.8"
+	label=er44
  ]
 "TestHTMLDOM" [
 	color="0.277777777800, 1.0, 0.8"
+	label=OM18
  ]
 "Purifier" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er35
  ]
 "SpecialScanner" [
 	color="0.277777777800, 1.0, 0.8"
+	label=er45
  ]
 "ContentScanner" [
-	color="0.249287749300, 1.0, 0.8"
+	color="0.277777777800, 1.0, 0.8"
+	label=er45
  ]
 }
