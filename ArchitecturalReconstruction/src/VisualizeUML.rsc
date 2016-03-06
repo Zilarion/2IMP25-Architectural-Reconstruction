@@ -48,6 +48,7 @@ rel[loc, int] nodeRelation = {};
  * Creates a string with dot specifications for rendering from a model and ofg
  */        
 public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool classOnly, str filename) {
+	nodeRelation = {};
 	str dotStr = dotSettings;
 	dotStr += "label=\"<filename>\"";
 	
@@ -65,6 +66,7 @@ public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bo
 }
 
 public str createDotFileNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool fullNames, str filename) {
+	nodeRelation = {};
 	str dotStr = dotSettingsNeato;
 	dotStr += "label=\"<filename>\"";
 	
@@ -162,6 +164,7 @@ private str generateAssociations(M3 m, rel[loc, str]  pathNames, tuple[rel[loc, 
 		nodeRelation = incrementIntSet(to, nodeRelation);
  		associationStr += "<prettyLocDep(from, pathNames)> -\> <prettyLocDep(to, pathNames)>\n";
  	}
+ 	text(nodeRelation);
 	return associationStr;
 }
 
