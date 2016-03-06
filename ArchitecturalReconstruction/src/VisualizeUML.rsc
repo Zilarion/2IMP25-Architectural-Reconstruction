@@ -47,8 +47,9 @@ rel[loc, int] nodeRelation = {};
 /*
  * Creates a string with dot specifications for rendering from a model and ofg
  */        
-public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool classOnly) {
+public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool classOnly, str filename) {
 	str dotStr = dotSettings;
+	dotStr += "label=\"<filename>\"";
 	
 	pathNames = invert(m@names);
 	
@@ -63,8 +64,9 @@ public str createDotFile(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bo
     return dotStr;
 }
 
-public str createDotFileNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool fullNames) {
+public str createDotFileNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool fullNames, str filename) {
 	str dotStr = dotSettingsNeato;
+	dotStr += "label=\"<filename>\"";
 	
 	pathNames = invert(m@names);
 	
@@ -101,7 +103,7 @@ private str generateClass(loc cl, M3 m, rel[loc, str] pathNames, bool classOnly)
 }
 
 private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames, bool fullNames) {
-	real maximum = toReal(max({number | <l, number> <- nodeRelation, <l1, number2> <- nodeRelation, number > number2}));
+	real maximum = toReal(max({number | <l, number> <- nodeRelation, <l1, number2> <- nodeRelation, number >= number2}));
 	real relValue = 0.0;
 	if (size(nodeRelation[cl]) > 0) {
 		relValue = toReal(getOneFrom(nodeRelation[cl]));
@@ -356,12 +358,12 @@ private str prettify(list[TypeSymbol] tSymbols, rel[loc,str] pathNames) {
 	return result;
 }
  
-public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool classOnly) = showDot(m, relations, |home:///<m.id.authority>.dot|, classOnly);
+public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, bool classOnly, str filename) = showDot(m, relations, |home:///<m.id.authority>.dot|, classOnly, filename);
  
-public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out, bool classOnly) {
-  writeFile(out, createDotFile(m, relations, classOnly));
+public void showDot(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out, bool classOnly, str filename) {
+  writeFile(out, createDotFile(m, relations, classOnly, filename));
 }
 
-public void showDotNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out, bool fullNames) {
-  writeFile(out, createDotFileNeato(m, relations, fullNames));
+public void showDotNeato(M3 m, tuple[rel[loc, loc], rel[loc, loc]] relations, loc out, bool fullNames, str filename) {
+  writeFile(out, createDotFileNeato(m, relations, fullNames, filename));
 }
