@@ -30,6 +30,8 @@ str dependency 		= 	"edge[arrowhead = \"open\"; style = \"dashed\"]\n";
 str dotSettings = "digraph classes {
 		         ' fontname = \"Bitstream Vera Sans\"
 		         ' fontsize = 8
+				 ' overlap=false
+		         ' concentrate=true
 		         ' node [ fontname = \"Bitstream Vera Sans\" fontsize = 8 shape = \"record\" ]
 		         ' edge [ fontname = \"Bitstream Vera Sans\" fontsize = 8 ]
 		         '";
@@ -102,7 +104,6 @@ private str generateClass(loc cl, M3 m, rel[loc, str] pathNames, bool classOnly)
 		genericName = substring(genericName, findLast(genericName,"/")+1);
 		className += "\\\<<genericName>\\\>";
 	}
-	
 	
 	return "\"<prettyLoc(cl, pathNames)>\" [
 		'	label=\"{
@@ -204,7 +205,7 @@ private str generateFields(loc cl, M3 m, rel[loc, str] pathNames) {
 	types = domainR(m@types, fields);
 	modifiers = domainR(m@modifiers, fields);
 
-	str returnStr = "";
+	list[str] rList = [];
 
 	// Loop over all fields
 	for (f <- fields) {
@@ -217,15 +218,44 @@ private str generateFields(loc cl, M3 m, rel[loc, str] pathNames) {
 		// Get all modifiers
 		set[Modifier] fieldModifiers = modifiers[f];
 		
+		//if ( size({f | Modifier f <- fieldModifiers, f == static()}) > 0) {
+		//	fieldName = applyModifier(fieldName, static());
+		//	fieldModifiers -= static();
+		//}
+		
 		// Apply each modifier
 		for (fModifier <- fieldModifiers) {
 			fieldName = applyModifier(fieldName, fModifier);
 		}
 		
 		// Create the resulting string
-		returnStr += "<fieldName> : <typeName>\\l";		
+		rList += "<fieldName> : <typeName>\\l";		
 	}
-	return returnStr;
+	
+	// Sort list to get a prettier UML
+	rList = sort(rList, bool(str a, str b){ 
+		str aStart = substring(a, 0, 1);
+		str bStart = substring(b, 0, 1);
+		if (aStart != bStart && aStart == "+") {
+			return true;
+		}
+		if (aStart == "#" && bStart == "+") {
+			return false;
+		}
+		if (aStart == "#" && bStart == "-") {
+			return true;
+		}
+		if (aStart == "-" && aStart != bStart) {
+			return false;
+		}
+		return a < b;
+ 	});
+ 	
+	str resultStr = "";
+	for (r <- rList) {
+		resultStr += r;
+	}
+	return resultStr;
 }
 
 /*
