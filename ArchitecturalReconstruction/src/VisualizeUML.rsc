@@ -94,9 +94,19 @@ private str generateClass(loc cl, M3 m, rel[loc, str] pathNames, bool classOnly)
 		fields = generateFields(cl, m, pathNames);
 		methods = generateMethods(cl, m, pathNames);
 	};
+	
+	str className = prettyLoc(cl, pathNames);
+	genericList = {typeVar | typeVar <- m@containment[cl], typeVar.scheme == "java+typeVariable"};
+	if(size(genericList) > 0) {
+		str genericName = getOneFrom(genericList).path;
+		genericName = substring(genericName, findLast(genericName,"/")+1);
+		className += "\\\<<genericName>\\\>";
+	}
+	
+	
 	return "\"<prettyLoc(cl, pathNames)>\" [
 		'	label=\"{
-		' 		<cl.path[1..]>|
+		' 		<className>|
 		' 		<fields>|
 		' 		<methods>
 		'	}\"
@@ -111,6 +121,8 @@ private str generateClassNeato(loc cl, M3 m , rel[loc, str] pathNames, bool full
 		relValue = toReal(getOneFrom(nodeRelation[cl]));
 	}
 	str hString = cl.path[1..];
+	if (findLast(hString,"/") != -1)
+		hString = substring(hString, findLast(hString,"/")+1);
 	if (!fullNames) {
 		hString = hashFunction(hString);
 	}
@@ -284,7 +296,6 @@ private str generateMethods(loc cl, M3 m, rel[loc, str] pathNames) {
 
 private str prettyLoc(loc c, rel[loc, str] pathNames) {
 	if (size(pathNames[c]) == 0) {
-		//println("Warning - we do not have a pretty name for: ");
 		return "";
 	}
 	return getOneFrom(pathNames[c]);
@@ -333,6 +344,10 @@ private str prettify(TypeSymbol t, rel[loc, str] pathNames) {
 		case \object() : return "object";
 		case \byte() : return "byte";
 		// Base class/interface types
+		case \typeArgument(decl): {
+			str genericName = decl.path[1..];
+			return substring(genericName, findLast(genericName,"/")+1);
+		}
 		case \class(cn, ex) : 
 			return "<prettyLoc(cn, pathNames)>";
 		case \interface(cn, ex) : 

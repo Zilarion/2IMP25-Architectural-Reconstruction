@@ -23,7 +23,7 @@ OFG buildGraph(Program p)
 	+ { <src, t> | assign(t, _, src) <- p.statements }
 	+ { <recv, m + "this"> | call(_, _, recv, m, _) <- p.statements }	
 	+ { <ap[i], fps[i]> | call(_, _, _, m, ap) <- p.statements, method(m, fps) <- p.decls, i <- index(ap) }
-	+ { <m + "return", t> | call(t, _, _, m, _) <- p.statements }	// Method returns -> called from where
+	+ { <m + "return", t> | call(t, _, _, m, _) <- p.statements }
   	;
   	
 OFG propFast(OFG g, rel[loc, loc] gen, rel[loc, loc] kill, bool back) {
