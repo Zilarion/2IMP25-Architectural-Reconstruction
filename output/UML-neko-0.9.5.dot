@@ -3,7 +3,7 @@ digraph classes {
  fontsize = 8
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "record" ]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
-"LocationItem" [
+label="UML-neko-0.9.5""LocationItem" [
 	label="{
  		org/cyberneko/html/HTMLScanner/LocationItem|
  		|
@@ -24,16 +24,16 @@ digraph classes {
  		
 	}"
  ]
-"UTF8BOMSkipper" [
+"Element" [
 	label="{
- 		test/UTF8BOMSkipper|
+ 		org/cyberneko/html/HTMLElements/Element|
  		|
  		
 	}"
  ]
-"Element" [
+"SAXParser" [
 	label="{
- 		org/cyberneko/html/HTMLElements/Element|
+ 		org/cyberneko/html/parsers/SAXParser|
  		|
  		
 	}"
@@ -59,13 +59,6 @@ digraph classes {
  		
 	}"
  ]
-"HTMLSAXParser" [
-	label="{
- 		sample/HTMLSAXParser|
- 		|
- 		
-	}"
- ]
 "SynthesizedItem" [
 	label="{
  		org/cyberneko/html/HTMLEventInfo/SynthesizedItem|
@@ -73,16 +66,23 @@ digraph classes {
  		
 	}"
  ]
-"Tester" [
+"IntProperties" [
 	label="{
- 		test/Tester|
+ 		org/cyberneko/html/HTMLEntities/IntProperties|
  		|
  		
 	}"
  ]
-"IntProperties" [
+"Purifier" [
 	label="{
- 		org/cyberneko/html/HTMLEntities/IntProperties|
+ 		org/cyberneko/html/filters/Purifier|
+ 		|
+ 		
+	}"
+ ]
+"Entry" [
+	label="{
+ 		org/cyberneko/html/HTMLEntities/IntProperties/Entry|
  		|
  		
 	}"
@@ -97,20 +97,6 @@ digraph classes {
 "HTMLElements" [
 	label="{
  		org/cyberneko/html/HTMLElements|
- 		|
- 		
-	}"
- ]
-"Entry" [
-	label="{
- 		org/cyberneko/html/HTMLEntities/IntProperties/Entry|
- 		|
- 		
-	}"
- ]
-"RemoveElements" [
-	label="{
- 		sample/RemoveElements|
  		|
  		
 	}"
@@ -178,20 +164,6 @@ digraph classes {
  		
 	}"
  ]
-"SAXParser" [
-	label="{
- 		org/cyberneko/html/parsers/SAXParser|
- 		|
- 		
-	}"
- ]
-"TestHTMLDOMFragment" [
-	label="{
- 		sample/TestHTMLDOMFragment|
- 		|
- 		
-	}"
- ]
 "NamespaceSupport" [
 	label="{
  		org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport|
@@ -216,20 +188,6 @@ digraph classes {
 "SecuritySupport12" [
 	label="{
  		org/cyberneko/html/SecuritySupport12|
- 		|
- 		
-	}"
- ]
-"Writer" [
-	label="{
- 		test/Writer|
- 		|
- 		
-	}"
- ]
-"Script" [
-	label="{
- 		sample/Script|
  		|
  		
 	}"
@@ -269,20 +227,6 @@ digraph classes {
  		
 	}"
  ]
-"TestHTMLDOM" [
-	label="{
- 		sample/TestHTMLDOM|
- 		|
- 		
-	}"
- ]
-"Purifier" [
-	label="{
- 		org/cyberneko/html/filters/Purifier|
- 		|
- 		
-	}"
- ]
 "SpecialScanner" [
 	label="{
  		org/cyberneko/html/HTMLScanner/SpecialScanner|
@@ -299,25 +243,19 @@ digraph classes {
  ]
 edge[arrowhead = "empty"; style= "solid"]
 ElementRemover -> DefaultFilter
+Identity -> DefaultFilter
 NamespaceBinder -> DefaultFilter
 SecuritySupport12 -> SecuritySupport
 Purifier -> DefaultFilter
 Writer -> DefaultFilter
-Identity -> DefaultFilter
-Writer -> DefaultFilter
-Script -> DefaultFilter
 edge[arrowhead = "empty"; style = "dashed"]
 edge[arrowhead = "open"; style = "solid"]
 HTMLScanner -> CurrentEntity
 InfoStack -> Info
-HTMLScanner -> PlaybackInputStream
 NamespaceSupport -> Entry
 IntProperties -> Entry
 edge[arrowhead = "open"; style = "dashed"]
 ContentScanner -> LocationItem
 HTMLTagBalancer -> Info
 ObjectFactory -> SecuritySupport
-RemoveElements -> ElementRemover
-RemoveElements -> Writer
-TestHTMLDOMFragment -> DOMFragmentParser
 }

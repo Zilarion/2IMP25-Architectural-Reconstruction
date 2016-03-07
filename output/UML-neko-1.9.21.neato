@@ -4,23 +4,17 @@ digraph classes {
  overlap=false
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled"]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
-edge[arrowhead = "empty"; style= "solid"]
+label="UML-neko-1.9.21"edge[arrowhead = "empty"; style= "solid"]
 ElementRemover -> DefaultFilter
+XercesBridge_2_0 -> XercesBridge
 XercesBridge_2_1 -> XercesBridge
 XercesBridge_2_2 -> XercesBridge
-XercesBridge_2_3 -> XercesBridge_2_2
-Purifier -> DefaultFilter
-Writer -> DefaultFilter
-MyContentScanner -> ContentScanner
-XercesBridge_2_0 -> XercesBridge
-Script -> DefaultFilter
 Identity -> DefaultFilter
 NamespaceBinder -> DefaultFilter
-Writer -> DefaultFilter
-EvaluateInputSourceFilter -> DefaultFilter
-Minimal -> DefaultFilter
+XercesBridge_2_3 -> XercesBridge_2_2
 SecuritySupport12 -> SecuritySupport
-InfiniteLoopScanner -> HTMLScanner
+Purifier -> DefaultFilter
+Writer -> DefaultFilter
 edge[arrowhead = "empty"; style = "dashed"]
 edge[arrowhead = "open"; style = "solid"]
 HTMLScanner -> CurrentEntity
@@ -28,278 +22,184 @@ Info -> Element
 LostText -> Entry
 HTMLTagBalancer -> ElementEntry
 InfoStack -> Info
-HTMLScanner -> PlaybackInputStream
-HTMLScanner -> ContentScanner
 NamespaceSupport -> Entry
 IntProperties -> Entry
 edge[arrowhead = "open"; style = "dashed"]
+ContentScanner -> LocationItem
 HTMLTagBalancer -> Info
 ObjectFactory -> SecuritySupport
-RemoveElements -> ElementRemover
-HTMLElements -> Element
-RemoveElements -> Writer
-HTMLScannerTest -> EvaluateInputSourceFilter
-TestHTMLDOMFragment -> DOMFragmentParser
-LocatorEncodingTest -> SAXParser
-ContentScanner -> LocationItem
-HTMLScannerTest -> HTMLScanner
 ContentScanner -> Element
-HTMLTagBalancingListenerTest -> TestParser
+HTMLElements -> Element
+HTMLTagBalancer -> Element
+HTMLAugmentations -> LocationItem
 HTMLConfiguration -> XercesBridge
 ObjectFactory -> XercesBridge
-HTMLTagBalancer -> Element
-DOMFragmentParserTest -> DOMFragmentParser
-HTMLAugmentations -> LocationItem
-"DOMFragmentParserTest" [
-	color="0.277777777800, 1.0, 0.8"
-	label="st40"
- ]
-"HTMLEntities" [
-	color="0.277777777800, 1.0, 0.8"
-	label="es31"
- ]
-"Entry" [
-	color="0.2610807528800, 1.0, 0.8"
-	label="ry33"
- ]
-"XercesBridge_2_2" [
-	color="0.2610807528800, 1.0, 0.8"
-	label="_248"
- ]
-"FragmentContextStackTest" [
-	color="0.277777777800, 1.0, 0.8"
-	label="st43"
- ]
-"InfiniteLoopScanner" [
-	color="0.277777777800, 1.0, 0.8"
-	label="er54"
- ]
-"IntProperties" [
-	color="0.277777777800, 1.0, 0.8"
-	label="es45"
- ]
-"CurrentEntity" [
-	color="0.242865816600, 1.0, 0.8"
-	label="ty44"
- ]
-"HTMLElements" [
-	color="0.277777777800, 1.0, 0.8"
-	label="ts31"
- ]
-"Entry" [
-	color="0.242865816600, 1.0, 0.8"
-	label="ry51"
- ]
-"RemoveElements" [
-	color="0.277777777800, 1.0, 0.8"
-	label="ts21"
- ]
 "LocationItem" [
-	color="0.226168791800, 1.0, 0.8"
-	label="em43"
- ]
-"MyContentScanner" [
-	color="0.277777777800, 1.0, 0.8"
-	label="er71"
- ]
-"HTMLAugmentations" [
-	color="0.277777777800, 1.0, 0.8"
-	label="ns36"
- ]
-"ElementRemover" [
-	color="0.242865816600, 1.0, 0.8"
-	label="er41"
- ]
-"HTMLScannerTest" [
-	color="0.277777777800, 1.0, 0.8"
-	label="st34"
- ]
-"ErrorReporter" [
-	color="0.277777777800, 1.0, 0.8"
-	label="er50"
- ]
-"DefaultFilter" [
-	color="0., 1.0, 0.8"
-	label="er40"
- ]
-"Writer" [
-	color="0.242865816600, 1.0, 0.8"
-	label="er33"
- ]
-"HTMLTagBalancer" [
-	color="0.277777777800, 1.0, 0.8"
-	label="er34"
+	color="0.166666666700, 1.0, 0.8"
+	label="em12"
  ]
 "DOMParser" [
 	color="0.277777777800, 1.0, 0.8"
-	label="er36"
+	label="er9"
  ]
-"CanonicalTest" [
+"HTMLEntities" [
 	color="0.277777777800, 1.0, 0.8"
-	label="st32"
- ]
-"HTMLErrorHandler" [
-	color="0.277777777800, 1.0, 0.8"
-	label="er35"
- ]
-"ObjectFactory" [
-	color="0.277777777800, 1.0, 0.8"
-	label="ry32"
- ]
-"HTMLConfiguration" [
-	color="0.277777777800, 1.0, 0.8"
-	label="on36"
- ]
-"ElementList" [
-	color="0.277777777800, 1.0, 0.8"
-	label="st43"
- ]
-"UTF8BOMSkipper" [
-	color="0.277777777800, 1.0, 0.8"
-	label="er33"
+	label="es12"
  ]
 "Element" [
-	color="0.210989678200, 1.0, 0.8"
-	label="nt39"
+	color="0.0555555555600, 1.0, 0.8"
+	label="nt7"
  ]
 "SAXParser" [
-	color="0.2610807528800, 1.0, 0.8"
-	label="er36"
- ]
-"HTMLTagBalancingListenerTest" [
 	color="0.277777777800, 1.0, 0.8"
-	label="st47"
- ]
-"TestHTMLDOMFragment" [
-	color="0.277777777800, 1.0, 0.8"
-	label="nt26"
- ]
-"XercesBridge" [
-	color="0.194292653300, 1.0, 0.8"
-	label="ge44"
- ]
-"TestParser" [
-	color="0.2610807528800, 1.0, 0.8"
-	label="er29"
- ]
-"SecuritySupport" [
-	color="0.207953855500, 1.0, 0.8"
-	label="rt34"
- ]
-"LostText" [
-	color="0.277777777800, 1.0, 0.8"
-	label="xt27"
- ]
-"NamespaceSupport" [
-	color="0.277777777800, 1.0, 0.8"
-	label="rt59"
- ]
-"Script" [
-	color="0.277777777800, 1.0, 0.8"
-	label="pt13"
- ]
-"Identity" [
-	color="0.277777777800, 1.0, 0.8"
-	label="ty35"
- ]
-"InfoStack" [
-	color="0.277777777800, 1.0, 0.8"
-	label="ck44"
- ]
-"SecuritySupport12" [
-	color="0.277777777800, 1.0, 0.8"
-	label="1236"
+	label="er9"
  ]
 "NamespaceBinder" [
 	color="0.277777777800, 1.0, 0.8"
-	label="er42"
- ]
-"Writer" [
-	color="0.277777777800, 1.0, 0.8"
-	label="er25"
- ]
-"HTMLScanner" [
-	color="0.24438372800, 1.0, 0.8"
-	label="er30"
- ]
-"XercesBridge_2_0" [
-	color="0.277777777800, 1.0, 0.8"
-	label="_048"
+	label="er15"
  ]
 "Entry" [
-	color="0.242865816600, 1.0, 0.8"
-	label="ry65"
+	color="0.222222222200, 1.0, 0.8"
+	label="ry5"
  ]
-"PlaybackInputStream" [
-	color="0.242865816600, 1.0, 0.8"
-	label="am50"
- ]
-"XercesBridge_2_1" [
-	color="0.277777777800, 1.0, 0.8"
-	label="_148"
- ]
-"ConfigurationError" [
-	color="0.277777777800, 1.0, 0.8"
-	label="or51"
- ]
-"Info" [
-	color="0.207953855500, 1.0, 0.8"
-	label="fo39"
- ]
-"XercesBridge_2_3" [
-	color="0.277777777800, 1.0, 0.8"
-	label="_348"
- ]
-"DOMFragmentParser" [
-	color="0.226168791800, 1.0, 0.8"
-	label="er44"
- ]
-"WriterTest" [
-	color="0.277777777800, 1.0, 0.8"
-	label="st37"
- ]
-"HTMLSAXParser" [
-	color="0.277777777800, 1.0, 0.8"
-	label="er20"
- ]
-"HeadNamespaceBug" [
-	color="0.277777777800, 1.0, 0.8"
-	label="ug35"
- ]
-"EvaluateInputSourceFilter" [
-	color="0.2610807528800, 1.0, 0.8"
-	label="er60"
- ]
-"Minimal" [
-	color="0.277777777800, 1.0, 0.8"
-	label="al14"
+"XercesBridge_2_2" [
+	color="0.222222222200, 1.0, 0.8"
+	label="_216"
  ]
 "SynthesizedItem" [
 	color="0.277777777800, 1.0, 0.8"
-	label="em48"
+	label="em15"
  ]
-"LocatorEncodingTest" [
+"IntProperties" [
 	color="0.277777777800, 1.0, 0.8"
-	label="st38"
+	label="es13"
+ ]
+"Entry" [
+	color="0.222222222200, 1.0, 0.8"
+	label="ry5"
+ ]
+"CurrentEntity" [
+	color="0.222222222200, 1.0, 0.8"
+	label="ty13"
+ ]
+"HTMLElements" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ts12"
+ ]
+"HTMLAugmentations" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ns17"
+ ]
+"ElementRemover" [
+	color="0.277777777800, 1.0, 0.8"
+	label="er14"
+ ]
+"ErrorReporter" [
+	color="0.277777777800, 1.0, 0.8"
+	label="er13"
+ ]
+"DefaultFilter" [
+	color="0., 1.0, 0.8"
+	label="er13"
+ ]
+"Writer" [
+	color="0.277777777800, 1.0, 0.8"
+	label="er6"
+ ]
+"HTMLTagBalancer" [
+	color="0.277777777800, 1.0, 0.8"
+	label="er15"
+ ]
+"ObjectFactory" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ry13"
+ ]
+"HTMLConfiguration" [
+	color="0.277777777800, 1.0, 0.8"
+	label="on17"
+ ]
+"ElementList" [
+	color="0.277777777800, 1.0, 0.8"
+	label="st11"
+ ]
+"XercesBridge" [
+	color="0., 1.0, 0.8"
+	label="ge12"
+ ]
+"SecuritySupport" [
+	color="0.166666666700, 1.0, 0.8"
+	label="rt15"
+ ]
+"LostText" [
+	color="0.277777777800, 1.0, 0.8"
+	label="xt8"
+ ]
+"NamespaceSupport" [
+	color="0.277777777800, 1.0, 0.8"
+	label="rt16"
+ ]
+"Identity" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ty8"
+ ]
+"InfoStack" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ck9"
+ ]
+"SecuritySupport12" [
+	color="0.277777777800, 1.0, 0.8"
+	label="1217"
+ ]
+"HTMLScanner" [
+	color="0.277777777800, 1.0, 0.8"
+	label="er11"
+ ]
+"XercesBridge_2_0" [
+	color="0.277777777800, 1.0, 0.8"
+	label="_016"
+ ]
+"Entry" [
+	color="0.222222222200, 1.0, 0.8"
+	label="ry5"
+ ]
+"PlaybackInputStream" [
+	color="0.277777777800, 1.0, 0.8"
+	label="am19"
+ ]
+"XercesBridge_2_1" [
+	color="0.277777777800, 1.0, 0.8"
+	label="_116"
+ ]
+"ConfigurationError" [
+	color="0.277777777800, 1.0, 0.8"
+	label="or18"
+ ]
+"Info" [
+	color="0.166666666700, 1.0, 0.8"
+	label="fo4"
+ ]
+"XercesBridge_2_3" [
+	color="0.277777777800, 1.0, 0.8"
+	label="_316"
+ ]
+"DOMFragmentParser" [
+	color="0.277777777800, 1.0, 0.8"
+	label="er17"
  ]
 "ElementEntry" [
-	color="0.2610807528800, 1.0, 0.8"
-	label="ry47"
- ]
-"TestHTMLDOM" [
-	color="0.277777777800, 1.0, 0.8"
-	label="OM18"
+	color="0.222222222200, 1.0, 0.8"
+	label="ry12"
  ]
 "Purifier" [
 	color="0.277777777800, 1.0, 0.8"
-	label="er35"
+	label="er8"
  ]
 "SpecialScanner" [
 	color="0.277777777800, 1.0, 0.8"
-	label="er45"
+	label="er14"
  ]
 "ContentScanner" [
-	color="0.24438372800, 1.0, 0.8"
-	label="er45"
+	color="0.277777777800, 1.0, 0.8"
+	label="er14"
  ]
 }

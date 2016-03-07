@@ -4,23 +4,17 @@ digraph classes {
  overlap=false
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled"]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
-edge[arrowhead = "empty"; style= "solid"]
+label="UML-neko-1.9.21"edge[arrowhead = "empty"; style= "solid"]
 ElementRemover -> DefaultFilter
+XercesBridge_2_0 -> XercesBridge
 XercesBridge_2_1 -> XercesBridge
 XercesBridge_2_2 -> XercesBridge
-XercesBridge_2_3 -> XercesBridge_2_2
-Purifier -> DefaultFilter
-Writer -> DefaultFilter
-MyContentScanner -> ContentScanner
-XercesBridge_2_0 -> XercesBridge
-Script -> DefaultFilter
 Identity -> DefaultFilter
 NamespaceBinder -> DefaultFilter
-Writer -> DefaultFilter
-EvaluateInputSourceFilter -> DefaultFilter
-Minimal -> DefaultFilter
+XercesBridge_2_3 -> XercesBridge_2_2
 SecuritySupport12 -> SecuritySupport
-InfiniteLoopScanner -> HTMLScanner
+Purifier -> DefaultFilter
+Writer -> DefaultFilter
 edge[arrowhead = "empty"; style = "dashed"]
 edge[arrowhead = "open"; style = "solid"]
 HTMLScanner -> CurrentEntity
@@ -28,278 +22,184 @@ Info -> Element
 LostText -> Entry
 HTMLTagBalancer -> ElementEntry
 InfoStack -> Info
-HTMLScanner -> PlaybackInputStream
-HTMLScanner -> ContentScanner
 NamespaceSupport -> Entry
 IntProperties -> Entry
 edge[arrowhead = "open"; style = "dashed"]
+ContentScanner -> LocationItem
 HTMLTagBalancer -> Info
 ObjectFactory -> SecuritySupport
-RemoveElements -> ElementRemover
-HTMLElements -> Element
-RemoveElements -> Writer
-HTMLScannerTest -> EvaluateInputSourceFilter
-TestHTMLDOMFragment -> DOMFragmentParser
-LocatorEncodingTest -> SAXParser
-ContentScanner -> LocationItem
-HTMLScannerTest -> HTMLScanner
 ContentScanner -> Element
-HTMLTagBalancingListenerTest -> TestParser
+HTMLElements -> Element
+HTMLTagBalancer -> Element
+HTMLAugmentations -> LocationItem
 HTMLConfiguration -> XercesBridge
 ObjectFactory -> XercesBridge
-HTMLTagBalancer -> Element
-DOMFragmentParserTest -> DOMFragmentParser
-HTMLAugmentations -> LocationItem
-"DOMFragmentParserTest" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/DOMFragmentParserTest"
- ]
-"HTMLEntities" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLEntities"
- ]
-"Entry" [
-	color="0.260416666700, 1.0, 0.8"
-	label="org/cyberneko/html/LostText/Entry"
- ]
-"XercesBridge_2_2" [
-	color="0.260416666700, 1.0, 0.8"
-	label="org/cyberneko/html/xercesbridge/XercesBridge_2_2"
- ]
-"FragmentContextStackTest" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/FragmentContextStackTest"
- ]
-"InfiniteLoopScanner" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScannerTest/InfiniteLoopScanner"
- ]
-"IntProperties" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLEntities/IntProperties"
- ]
-"CurrentEntity" [
-	color="0.243055555600, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScanner/CurrentEntity"
- ]
-"HTMLElements" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLElements"
- ]
-"Entry" [
-	color="0.243055555600, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLEntities/IntProperties/Entry"
- ]
-"RemoveElements" [
-	color="0.277777777800, 1.0, 0.8"
-	label="sample/RemoveElements"
- ]
 "LocationItem" [
-	color="0.225694444400, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScanner/LocationItem"
- ]
-"MyContentScanner" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScannerTest/InfiniteLoopScanner/MyContentScanner"
- ]
-"HTMLAugmentations" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLAugmentations"
- ]
-"ElementRemover" [
-	color="0.243055555600, 1.0, 0.8"
-	label="org/cyberneko/html/filters/ElementRemover"
- ]
-"HTMLScannerTest" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScannerTest"
- ]
-"ErrorReporter" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLConfiguration/ErrorReporter"
- ]
-"DefaultFilter" [
-	color="0., 1.0, 0.8"
-	label="org/cyberneko/html/filters/DefaultFilter"
- ]
-"Writer" [
-	color="0.243055555600, 1.0, 0.8"
-	label="org/cyberneko/html/filters/Writer"
- ]
-"HTMLTagBalancer" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLTagBalancer"
+	color="0.166666666700, 1.0, 0.8"
+	label="LocationItem"
  ]
 "DOMParser" [
 	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/parsers/DOMParser"
+	label="DOMParser"
  ]
-"CanonicalTest" [
+"HTMLEntities" [
 	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/CanonicalTest"
- ]
-"HTMLErrorHandler" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLErrorHandler"
- ]
-"ObjectFactory" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/ObjectFactory"
- ]
-"HTMLConfiguration" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLConfiguration"
- ]
-"ElementList" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLElements/ElementList"
- ]
-"UTF8BOMSkipper" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/UTF8BOMSkipper"
+	label="HTMLEntities"
  ]
 "Element" [
-	color="0.208333333300, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLElements/Element"
+	color="0.0555555555600, 1.0, 0.8"
+	label="Element"
  ]
 "SAXParser" [
-	color="0.260416666700, 1.0, 0.8"
-	label="org/cyberneko/html/parsers/SAXParser"
- ]
-"HTMLTagBalancingListenerTest" [
 	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLTagBalancingListenerTest"
- ]
-"TestHTMLDOMFragment" [
-	color="0.277777777800, 1.0, 0.8"
-	label="sample/TestHTMLDOMFragment"
- ]
-"XercesBridge" [
-	color="0.190972222200, 1.0, 0.8"
-	label="org/cyberneko/html/xercesbridge/XercesBridge"
- ]
-"TestParser" [
-	color="0.260416666700, 1.0, 0.8"
-	label="org/cyberneko/html/TestParser"
- ]
-"SecuritySupport" [
-	color="0.208333333300, 1.0, 0.8"
-	label="org/cyberneko/html/SecuritySupport"
- ]
-"LostText" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/LostText"
- ]
-"NamespaceSupport" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport"
- ]
-"Script" [
-	color="0.277777777800, 1.0, 0.8"
-	label="sample/Script"
- ]
-"Identity" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/filters/Identity"
- ]
-"InfoStack" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLTagBalancer/InfoStack"
- ]
-"SecuritySupport12" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/SecuritySupport12"
+	label="SAXParser"
  ]
 "NamespaceBinder" [
 	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/filters/NamespaceBinder"
- ]
-"Writer" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/Writer"
- ]
-"HTMLScanner" [
-	color="0.243055555600, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScanner"
- ]
-"XercesBridge_2_0" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/xercesbridge/XercesBridge_2_0"
+	label="NamespaceBinder"
  ]
 "Entry" [
-	color="0.243055555600, 1.0, 0.8"
-	label="org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport/Entry"
+	color="0.222222222200, 1.0, 0.8"
+	label="Entry"
  ]
-"PlaybackInputStream" [
-	color="0.243055555600, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScanner/PlaybackInputStream"
- ]
-"XercesBridge_2_1" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/xercesbridge/XercesBridge_2_1"
- ]
-"ConfigurationError" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/ObjectFactory/ConfigurationError"
- ]
-"Info" [
-	color="0.208333333300, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLTagBalancer/Info"
- ]
-"XercesBridge_2_3" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/xercesbridge/XercesBridge_2_3"
- ]
-"DOMFragmentParser" [
-	color="0.225694444400, 1.0, 0.8"
-	label="org/cyberneko/html/parsers/DOMFragmentParser"
- ]
-"WriterTest" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/filters/WriterTest"
- ]
-"HTMLSAXParser" [
-	color="0.277777777800, 1.0, 0.8"
-	label="sample/HTMLSAXParser"
- ]
-"HeadNamespaceBug" [
-	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HeadNamespaceBug"
- ]
-"EvaluateInputSourceFilter" [
-	color="0.260416666700, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScannerTest/EvaluateInputSourceFilter"
- ]
-"Minimal" [
-	color="0.277777777800, 1.0, 0.8"
-	label="sample/Minimal"
+"XercesBridge_2_2" [
+	color="0.222222222200, 1.0, 0.8"
+	label="XercesBridge_2_2"
  ]
 "SynthesizedItem" [
 	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLEventInfo/SynthesizedItem"
+	label="SynthesizedItem"
  ]
-"LocatorEncodingTest" [
+"IntProperties" [
 	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/LocatorEncodingTest"
+	label="IntProperties"
+ ]
+"Entry" [
+	color="0.222222222200, 1.0, 0.8"
+	label="Entry"
+ ]
+"CurrentEntity" [
+	color="0.222222222200, 1.0, 0.8"
+	label="CurrentEntity"
+ ]
+"HTMLElements" [
+	color="0.277777777800, 1.0, 0.8"
+	label="HTMLElements"
+ ]
+"HTMLAugmentations" [
+	color="0.277777777800, 1.0, 0.8"
+	label="HTMLAugmentations"
+ ]
+"ElementRemover" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ElementRemover"
+ ]
+"ErrorReporter" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ErrorReporter"
+ ]
+"DefaultFilter" [
+	color="0., 1.0, 0.8"
+	label="DefaultFilter"
+ ]
+"Writer" [
+	color="0.277777777800, 1.0, 0.8"
+	label="Writer"
+ ]
+"HTMLTagBalancer" [
+	color="0.277777777800, 1.0, 0.8"
+	label="HTMLTagBalancer"
+ ]
+"ObjectFactory" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ObjectFactory"
+ ]
+"HTMLConfiguration" [
+	color="0.277777777800, 1.0, 0.8"
+	label="HTMLConfiguration"
+ ]
+"ElementList" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ElementList"
+ ]
+"XercesBridge" [
+	color="0., 1.0, 0.8"
+	label="XercesBridge"
+ ]
+"SecuritySupport" [
+	color="0.166666666700, 1.0, 0.8"
+	label="SecuritySupport"
+ ]
+"LostText" [
+	color="0.277777777800, 1.0, 0.8"
+	label="LostText"
+ ]
+"NamespaceSupport" [
+	color="0.277777777800, 1.0, 0.8"
+	label="NamespaceSupport"
+ ]
+"Identity" [
+	color="0.277777777800, 1.0, 0.8"
+	label="Identity"
+ ]
+"InfoStack" [
+	color="0.277777777800, 1.0, 0.8"
+	label="InfoStack"
+ ]
+"SecuritySupport12" [
+	color="0.277777777800, 1.0, 0.8"
+	label="SecuritySupport12"
+ ]
+"HTMLScanner" [
+	color="0.277777777800, 1.0, 0.8"
+	label="HTMLScanner"
+ ]
+"XercesBridge_2_0" [
+	color="0.277777777800, 1.0, 0.8"
+	label="XercesBridge_2_0"
+ ]
+"Entry" [
+	color="0.222222222200, 1.0, 0.8"
+	label="Entry"
+ ]
+"PlaybackInputStream" [
+	color="0.277777777800, 1.0, 0.8"
+	label="PlaybackInputStream"
+ ]
+"XercesBridge_2_1" [
+	color="0.277777777800, 1.0, 0.8"
+	label="XercesBridge_2_1"
+ ]
+"ConfigurationError" [
+	color="0.277777777800, 1.0, 0.8"
+	label="ConfigurationError"
+ ]
+"Info" [
+	color="0.166666666700, 1.0, 0.8"
+	label="Info"
+ ]
+"XercesBridge_2_3" [
+	color="0.277777777800, 1.0, 0.8"
+	label="XercesBridge_2_3"
+ ]
+"DOMFragmentParser" [
+	color="0.277777777800, 1.0, 0.8"
+	label="DOMFragmentParser"
  ]
 "ElementEntry" [
-	color="0.260416666700, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLTagBalancer/ElementEntry"
- ]
-"TestHTMLDOM" [
-	color="0.277777777800, 1.0, 0.8"
-	label="sample/TestHTMLDOM"
+	color="0.222222222200, 1.0, 0.8"
+	label="ElementEntry"
  ]
 "Purifier" [
 	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/filters/Purifier"
+	label="Purifier"
  ]
 "SpecialScanner" [
 	color="0.277777777800, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScanner/SpecialScanner"
+	label="SpecialScanner"
  ]
 "ContentScanner" [
-	color="0.243055555600, 1.0, 0.8"
-	label="org/cyberneko/html/HTMLScanner/ContentScanner"
+	color="0.277777777800, 1.0, 0.8"
+	label="ContentScanner"
  ]
 }

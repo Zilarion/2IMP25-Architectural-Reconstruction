@@ -3,9 +3,16 @@ digraph classes {
  fontsize = 8
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "record" ]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
-"DOMFragmentParserTest" [
+label="UML-neko-1.9.21""LocationItem" [
 	label="{
- 		org/cyberneko/html/DOMFragmentParserTest|
+ 		org/cyberneko/html/HTMLScanner/LocationItem|
+ 		|
+ 		
+	}"
+ ]
+"DOMParser" [
+	label="{
+ 		org/cyberneko/html/parsers/DOMParser|
  		|
  		
 	}"
@@ -13,6 +20,27 @@ digraph classes {
 "HTMLEntities" [
 	label="{
  		org/cyberneko/html/HTMLEntities|
+ 		|
+ 		
+	}"
+ ]
+"Element" [
+	label="{
+ 		org/cyberneko/html/HTMLElements/Element|
+ 		|
+ 		
+	}"
+ ]
+"SAXParser" [
+	label="{
+ 		org/cyberneko/html/parsers/SAXParser|
+ 		|
+ 		
+	}"
+ ]
+"NamespaceBinder" [
+	label="{
+ 		org/cyberneko/html/filters/NamespaceBinder|
  		|
  		
 	}"
@@ -31,16 +59,9 @@ digraph classes {
  		
 	}"
  ]
-"FragmentContextStackTest" [
+"SynthesizedItem" [
 	label="{
- 		org/cyberneko/html/FragmentContextStackTest|
- 		|
- 		
-	}"
- ]
-"InfiniteLoopScanner" [
-	label="{
- 		org/cyberneko/html/HTMLScannerTest/InfiniteLoopScanner|
+ 		org/cyberneko/html/HTMLEventInfo/SynthesizedItem|
  		|
  		
 	}"
@@ -48,6 +69,13 @@ digraph classes {
 "IntProperties" [
 	label="{
  		org/cyberneko/html/HTMLEntities/IntProperties|
+ 		|
+ 		
+	}"
+ ]
+"Entry" [
+	label="{
+ 		org/cyberneko/html/HTMLEntities/IntProperties/Entry|
  		|
  		
 	}"
@@ -66,34 +94,6 @@ digraph classes {
  		
 	}"
  ]
-"Entry" [
-	label="{
- 		org/cyberneko/html/HTMLEntities/IntProperties/Entry|
- 		|
- 		
-	}"
- ]
-"RemoveElements" [
-	label="{
- 		sample/RemoveElements|
- 		|
- 		
-	}"
- ]
-"LocationItem" [
-	label="{
- 		org/cyberneko/html/HTMLScanner/LocationItem|
- 		|
- 		
-	}"
- ]
-"MyContentScanner" [
-	label="{
- 		org/cyberneko/html/HTMLScannerTest/InfiniteLoopScanner/MyContentScanner|
- 		|
- 		
-	}"
- ]
 "HTMLAugmentations" [
 	label="{
  		org/cyberneko/html/HTMLAugmentations|
@@ -104,13 +104,6 @@ digraph classes {
 "ElementRemover" [
 	label="{
  		org/cyberneko/html/filters/ElementRemover|
- 		|
- 		
-	}"
- ]
-"HTMLScannerTest" [
-	label="{
- 		org/cyberneko/html/HTMLScannerTest|
  		|
  		
 	}"
@@ -143,27 +136,6 @@ digraph classes {
  		
 	}"
  ]
-"DOMParser" [
-	label="{
- 		org/cyberneko/html/parsers/DOMParser|
- 		|
- 		
-	}"
- ]
-"CanonicalTest" [
-	label="{
- 		org/cyberneko/html/CanonicalTest|
- 		|
- 		
-	}"
- ]
-"HTMLErrorHandler" [
-	label="{
- 		org/cyberneko/html/HTMLErrorHandler|
- 		|
- 		
-	}"
- ]
 "ObjectFactory" [
 	label="{
  		org/cyberneko/html/ObjectFactory|
@@ -185,51 +157,9 @@ digraph classes {
  		
 	}"
  ]
-"UTF8BOMSkipper" [
-	label="{
- 		org/cyberneko/html/UTF8BOMSkipper|
- 		|
- 		
-	}"
- ]
-"Element" [
-	label="{
- 		org/cyberneko/html/HTMLElements/Element|
- 		|
- 		
-	}"
- ]
-"SAXParser" [
-	label="{
- 		org/cyberneko/html/parsers/SAXParser|
- 		|
- 		
-	}"
- ]
-"HTMLTagBalancingListenerTest" [
-	label="{
- 		org/cyberneko/html/HTMLTagBalancingListenerTest|
- 		|
- 		
-	}"
- ]
-"TestHTMLDOMFragment" [
-	label="{
- 		sample/TestHTMLDOMFragment|
- 		|
- 		
-	}"
- ]
 "XercesBridge" [
 	label="{
  		org/cyberneko/html/xercesbridge/XercesBridge|
- 		|
- 		
-	}"
- ]
-"TestParser" [
-	label="{
- 		org/cyberneko/html/TestParser|
  		|
  		
 	}"
@@ -255,13 +185,6 @@ digraph classes {
  		
 	}"
  ]
-"Script" [
-	label="{
- 		sample/Script|
- 		|
- 		
-	}"
- ]
 "Identity" [
 	label="{
  		org/cyberneko/html/filters/Identity|
@@ -279,20 +202,6 @@ digraph classes {
 "SecuritySupport12" [
 	label="{
  		org/cyberneko/html/SecuritySupport12|
- 		|
- 		
-	}"
- ]
-"NamespaceBinder" [
-	label="{
- 		org/cyberneko/html/filters/NamespaceBinder|
- 		|
- 		
-	}"
- ]
-"Writer" [
-	label="{
- 		org/cyberneko/html/Writer|
  		|
  		
 	}"
@@ -360,65 +269,9 @@ digraph classes {
  		
 	}"
  ]
-"WriterTest" [
-	label="{
- 		org/cyberneko/html/filters/WriterTest|
- 		|
- 		
-	}"
- ]
-"HTMLSAXParser" [
-	label="{
- 		sample/HTMLSAXParser|
- 		|
- 		
-	}"
- ]
-"HeadNamespaceBug" [
-	label="{
- 		org/cyberneko/html/HeadNamespaceBug|
- 		|
- 		
-	}"
- ]
-"EvaluateInputSourceFilter" [
-	label="{
- 		org/cyberneko/html/HTMLScannerTest/EvaluateInputSourceFilter|
- 		|
- 		
-	}"
- ]
-"Minimal" [
-	label="{
- 		sample/Minimal|
- 		|
- 		
-	}"
- ]
-"SynthesizedItem" [
-	label="{
- 		org/cyberneko/html/HTMLEventInfo/SynthesizedItem|
- 		|
- 		
-	}"
- ]
-"LocatorEncodingTest" [
-	label="{
- 		org/cyberneko/html/LocatorEncodingTest|
- 		|
- 		
-	}"
- ]
 "ElementEntry" [
 	label="{
  		org/cyberneko/html/HTMLTagBalancer/ElementEntry|
- 		|
- 		
-	}"
- ]
-"TestHTMLDOM" [
-	label="{
- 		sample/TestHTMLDOM|
  		|
  		
 	}"
@@ -446,21 +299,15 @@ digraph classes {
  ]
 edge[arrowhead = "empty"; style= "solid"]
 ElementRemover -> DefaultFilter
+XercesBridge_2_0 -> XercesBridge
 XercesBridge_2_1 -> XercesBridge
 XercesBridge_2_2 -> XercesBridge
-XercesBridge_2_3 -> XercesBridge_2_2
-Purifier -> DefaultFilter
-Writer -> DefaultFilter
-MyContentScanner -> ContentScanner
-XercesBridge_2_0 -> XercesBridge
-Script -> DefaultFilter
 Identity -> DefaultFilter
 NamespaceBinder -> DefaultFilter
-Writer -> DefaultFilter
-EvaluateInputSourceFilter -> DefaultFilter
-Minimal -> DefaultFilter
+XercesBridge_2_3 -> XercesBridge_2_2
 SecuritySupport12 -> SecuritySupport
-InfiniteLoopScanner -> HTMLScanner
+Purifier -> DefaultFilter
+Writer -> DefaultFilter
 edge[arrowhead = "empty"; style = "dashed"]
 edge[arrowhead = "open"; style = "solid"]
 HTMLScanner -> CurrentEntity
@@ -468,26 +315,16 @@ Info -> Element
 LostText -> Entry
 HTMLTagBalancer -> ElementEntry
 InfoStack -> Info
-HTMLScanner -> PlaybackInputStream
-HTMLScanner -> ContentScanner
 NamespaceSupport -> Entry
 IntProperties -> Entry
 edge[arrowhead = "open"; style = "dashed"]
+ContentScanner -> LocationItem
 HTMLTagBalancer -> Info
 ObjectFactory -> SecuritySupport
-RemoveElements -> ElementRemover
-HTMLElements -> Element
-RemoveElements -> Writer
-HTMLScannerTest -> EvaluateInputSourceFilter
-TestHTMLDOMFragment -> DOMFragmentParser
-LocatorEncodingTest -> SAXParser
-ContentScanner -> LocationItem
-HTMLScannerTest -> HTMLScanner
 ContentScanner -> Element
-HTMLTagBalancingListenerTest -> TestParser
+HTMLElements -> Element
+HTMLTagBalancer -> Element
+HTMLAugmentations -> LocationItem
 HTMLConfiguration -> XercesBridge
 ObjectFactory -> XercesBridge
-HTMLTagBalancer -> Element
-DOMFragmentParserTest -> DOMFragmentParser
-HTMLAugmentations -> LocationItem
 }

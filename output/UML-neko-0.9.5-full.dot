@@ -3,7 +3,7 @@ digraph classes {
  fontsize = 8
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "record" ]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
-"LocationItem" [
+label="UML-neko-0.9.5""LocationItem" [
 	label="{
  		org/cyberneko/html/HTMLScanner/LocationItem|
  		# fEndColumnNumber : int\l# fBeginLineNumber : int\l# fBeginColumnNumber : int\l# fEndLineNumber : int\l|
@@ -24,18 +24,18 @@ digraph classes {
  		+ _get_(c : int) : String\l+ _get_(value : String, name : String) : int\l_- load0_(filename : String, e : IOException) : void\l
 	}"
  ]
-"UTF8BOMSkipper" [
-	label="{
- 		test/UTF8BOMSkipper|
- 		- fFirst3Bytes : int[1]\l- fOffset : int\l- fStart : boolean\l|
- 		+ UTF8BOMSkipper(stream : InputStream) : UTF8BOMSkipper\l+ available() : int\l+ markSupported() : boolean\l+ read(b : int, b1 : int, b2 : int, b3 : int) : int\l+ read(i : int, b : int, buffer : byte[1], offset : int, length : int) : int\l
-	}"
- ]
 "Element" [
 	label="{
  		org/cyberneko/html/HTMLElements/Element|
  		+ _CONTAINER_ : int\l+ parent : Element[1]\l+ code : short\l+ bounds : short\l+ _SPECIAL_ : int\l+ _INLINE_ : int\l+ parentCodes : short[1]\l+ closes : short[1]\l_- EMPTY_ARRAY_ : short[1]\l+ flags : int\l+ name : String\l+ _BLOCK_ : int\l+ _EMPTY_ : int\l|
  		+ Element(flags : int, bounds : short, parent : short, closes : short[1], code : short, name : String) : Element\l+ Element(flags : int, code : short, name : String, parent : short, closes : short[1]) : Element\l+ Element(flags : int, parents : short[1], bounds : short, closes : short[1], code : short, name : String) : Element\l+ Element(parents : short[1], flags : int, closes : short[1], code : short, name : String) : Element\l+ ISBLOCK() : boolean\l+ ISCONTAINER() : boolean\l+ ISEMPTY() : boolean\l+ ISINLINE() : boolean\l+ ISSPECIAL() : boolean\l+ closes(i : int, tag : short) : boolean\l+ equals(o : object) : boolean\l+ hashCode() : int\l
+	}"
+ ]
+"SAXParser" [
+	label="{
+ 		org/cyberneko/html/parsers/SAXParser|
+ 		|
+ 		+ SAXParser() : SAXParser\l
 	}"
  ]
 "SecuritySupport" [
@@ -59,13 +59,6 @@ digraph classes {
  		ConfigurationError(msg : String, x : Exception) : ConfigurationError\lgetException() : Exception\l
 	}"
  ]
-"HTMLSAXParser" [
-	label="{
- 		sample/HTMLSAXParser|
- 		|
- 		+ HTMLSAXParser() : HTMLSAXParser\l
-	}"
- ]
 "SynthesizedItem" [
 	label="{
  		org/cyberneko/html/HTMLEventInfo/SynthesizedItem|
@@ -73,18 +66,25 @@ digraph classes {
  		+ getBeginColumnNumber() : int\l+ getBeginLineNumber() : int\l+ getEndColumnNumber() : int\l+ getEndLineNumber() : int\l+ isSynthesized() : boolean\l+ toString() : String\l
 	}"
  ]
-"Tester" [
-	label="{
- 		test/Tester|
- 		# fFileSets : Vector\l# fCanonicalDir : String\l# fOutputDir : String\l|
- 		+ addFileSet(fileset : FileSet) : void\l+ execute(filters : [1], i : int, errors : int, e : Exception, indir : File, indir : File, outfile : File, outfile : File, out : OutputStream, canonicaldir : String, type : String, canondir : File, files : String[1], infile : File, tokenizer : StringTokenizer, size : int, files : String[1], settingline : String, i : int, j : int, insettings : File, j : int, e : Exception, infilename : String, settings : BufferedReader, e : IOException, dirscanner : , fileset : , dirscanner : , fileset : , outputdir : String, canonfile : File, id : String, value : String, parser : XMLParserConfiguration, outdir : File) : void\l+ setCanonDir(canondir : String) : void\l+ setOutputDir(outdir : String) : void\l# compare(n : long, error : boolean, l1 : int, l2 : int, f : String, s1 : String, s2 : String) : boolean\l# compare(n : long, l1 : String, l2 : String, i1 : BufferedReader, errors : int, f1 : File, i2 : BufferedReader, f2 : File) : boolean\l
-	}"
- ]
 "IntProperties" [
 	label="{
  		org/cyberneko/html/HTMLEntities/IntProperties|
  		- entries : Entry[1]\l- top : int\l|
  		+ get(key : int, entry : Entry, hash : int) : String\l+ put(key : int, value : String, entry : Entry, hash : int) : void\l
+	}"
+ ]
+"Purifier" [
+	label="{
+ 		org/cyberneko/html/filters/Purifier|
+ 		_# AUGMENTATIONS_ : String\l# fSystemId : String\l# fSeenDoctype : boolean\l- fQName : QName\l- FSTRINGBUFFER : XMLStringBuffer\l# fSeenRootElement : boolean\l# fNamespaceContext : NamespaceContext\l# fNamespaces : boolean\l# fInCDATASection : boolean\l_- RECOGNIZED_FEATURES_ : String[1]\l# fSynthesizedNamespaceCount : int\l# fAugmentations : boolean\l# fPublicId : String\l_- RECOGNIZED_FEATURES_DEFAULTS_ : Boolean[1]\l+ _SYNTHESIZED_NAMESPACE_PREFX_ : String\l- FINFOSETAUGS : HTMLAugmentations\l_# NAMESPACES_ : String\l_# SYNTHESIZED_ITEM_ : HTMLEventInfo\l|
+ 		+ characters(c : char, str : StringBuffer, length : int, i : int, augs : Augmentations, text : XMLString) : void\l+ comment(str : StringBuffer, length : int, i : int, c : char, augs : Augmentations, text : XMLString) : void\l+ doctypeDecl(sysid : String, pubid : String, root : String, augs : Augmentations) : void\l+ emptyElement(attrs : XMLAttributes, element : QName, augs : Augmentations) : void\l+ endCDATA(augs : Augmentations) : void\l+ endElement(augs : Augmentations, element : QName) : void\l+ processingInstruction(target : String, data : XMLString, augs : Augmentations) : void\l+ reset(manager : XMLComponentManager) : void\l+ startCDATA(augs : Augmentations) : void\l+ startDocument(locator : XMLLocator, encoding : String, augs : Augmentations) : void\l+ startDocument(nscontext : NamespaceContext, locator : XMLLocator, augs : Augmentations, encoding : String) : void\l+ startElement(attrs : XMLAttributes, augs : Augmentations, element : QName) : void\l+ xmlDecl(version : String, standalone : String, augs : Augmentations, encoding : String) : void\l# SYNTHESIZEDAUGS(augs : HTMLAugmentations) : Augmentations\l# handleStartDocument() : void\l# handleStartElement(attrCount : int, attrs : XMLAttributes, i : int, element : QName, augs : Augmentations) : void\l# purifyName(length : int, seenColon : boolean, localpart : boolean, i : int, str : StringBuffer, c : char, name : String) : String\l# purifyQName(qname : QName) : QName\l# purifyText(i : int, c : char, text : XMLString) : XMLString\l# synthesizeBinding(atype : String, qname : String, localpart : String, ns : String, avalue : String, prefix : String, uri : String, attrs : XMLAttributes) : void\l_# toHexString_(padlen : int, i : int, len : int, str : StringBuffer, c : int) : String\l
+	}"
+ ]
+"Entry" [
+	label="{
+ 		org/cyberneko/html/HTMLEntities/IntProperties/Entry|
+ 		+ next : Entry\l+ value : String\l+ key : int\l|
+ 		+ Entry(next : Entry, key : int, value : String) : Entry\l
 	}"
  ]
 "CurrentEntity" [
@@ -99,20 +99,6 @@ digraph classes {
  		org/cyberneko/html/HTMLElements|
  		+ _SOUND_ : short\l+ _U_ : short\l+ _COMMENT_ : short\l+ _H1_ : short\l+ _PARAM_ : short\l_# ELEMENTS_ARRAY_ : Element[1][2]\l+ _BDO_ : short\l+ _DIR_ : short\l+ _FRAME_ : short\l+ _ABBR_ : short\l+ _SAMP_ : short\l+ _NOBR_ : short\l+ _BASE_ : short\l+ _KBD_ : short\l+ _KEYGEN_ : short\l+ _BUTTON_ : short\l+ _STRIKE_ : short\l+ _SUP_ : short\l+ _TABLE_ : short\l+ _INS_ : short\l+ _P_ : short\l+ _TH_ : short\l+ _NOLAYER_ : short\l+ _DIV_ : short\l+ _LAYER_ : short\l+ _Q_ : short\l+ _STYLE_ : short\l+ _OPTION_ : short\l+ _FRAMESET_ : short\l+ _CENTER_ : short\l+ _RBC_ : short\l+ _S_ : short\l+ _CITE_ : short\l_# ELEMENTS_ : ElementList\l+ _UL_ : short\l+ _STRONG_ : short\l+ _LABEL_ : short\l+ _ADDRESS_ : short\l+ _THEAD_ : short\l+ _LINK_ : short\l+ _TEXTAREA_ : short\l+ _APPLET_ : short\l+ _RUBY_ : short\l+ _TBODY_ : short\l+ _XML_ : short\l+ _PLAINTEXT_ : short\l+ _NOEMBED_ : short\l+ _TITLE_ : short\l+ _SELECT_ : short\l+ _LI_ : short\l+ _OL_ : short\l+ _EMBED_ : short\l+ _RP_ : short\l+ _TR_ : short\l+ _XMP_ : short\l+ _OBJECT_ : short\l+ _MENU_ : short\l+ _COLGROUP_ : short\l+ _BASEFONT_ : short\l+ _DD_ : short\l+ _MAP_ : short\l+ _HEAD_ : short\l+ _BLINK_ : short\l+ _TT_ : short\l+ _BODY_ : short\l+ _RT_ : short\l+ _BIG_ : short\l+ _COL_ : short\l+ _FORM_ : short\l+ _SUB_ : short\l+ _IFRAME_ : short\l+ _A_ : short\l+ _RTC_ : short\l+ _META_ : short\l+ _B_ : short\l+ _TFOOT_ : short\l+ _MARQUEE_ : short\l+ _NO_SUCH_ELEMENT_ : Element\l+ _ACRONYM_ : short\l+ _PRE_ : short\l+ _IMG_ : short\l+ _MULTICOL_ : short\l+ _NOFRAMES_ : short\l+ _DL_ : short\l+ _EM_ : short\l+ _LISTING_ : short\l+ _FIELDSET_ : short\l+ _ILAYER_ : short\l+ _SPAN_ : short\l+ _CAPTION_ : short\l+ _H2_ : short\l+ _HR_ : short\l+ _H3_ : short\l+ _SCRIPT_ : short\l+ _WBR_ : short\l+ _VAR_ : short\l+ _HTML_ : short\l+ _SMALL_ : short\l+ _ISINDEX_ : short\l+ _H4_ : short\l+ _NOSCRIPT_ : short\l+ _SPACER_ : short\l+ _OPTGROUP_ : short\l+ _I_ : short\l+ _H5_ : short\l+ _CODE_ : short\l+ _AREA_ : short\l+ _LEGEND_ : short\l+ _NEXTID_ : short\l+ _H6_ : short\l+ _BGSOUND_ : short\l+ _INPUT_ : short\l+ _UNKNOWN_ : short\l+ _BLOCKQUOTE_ : short\l+ _FONT_ : short\l+ _DEL_ : short\l+ _DFN_ : short\l+ _BR_ : short\l+ _DT_ : short\l+ _RB_ : short\l+ _TD_ : short\l|
  		+ _GETELEMENT_(code : short) : Element\l+ _GETELEMENT_(elem : Element, elements : Element[1], element : Element, c : int, ename : String, i : int) : Element\l+ _GETELEMENT_(ename : String) : Element\l
-	}"
- ]
-"Entry" [
-	label="{
- 		org/cyberneko/html/HTMLEntities/IntProperties/Entry|
- 		+ next : Entry\l+ value : String\l+ key : int\l|
- 		+ Entry(next : Entry, key : int, value : String) : Entry\l
-	}"
- ]
-"RemoveElements" [
-	label="{
- 		sample/RemoveElements|
- 		|
- 		+ _main_(systemId : String, remover : ElementRemover, writer : Writer, source : , parser : XMLParserConfiguration, filters : [1], argv : String[1], i : int) : void\l
 	}"
  ]
 "HTMLAugmentations" [
@@ -178,20 +164,6 @@ digraph classes {
  		+ addElement(newarray : Element[1], element : Element) : void\l
 	}"
  ]
-"SAXParser" [
-	label="{
- 		org/cyberneko/html/parsers/SAXParser|
- 		|
- 		+ SAXParser() : SAXParser\l
-	}"
- ]
-"TestHTMLDOMFragment" [
-	label="{
- 		sample/TestHTMLDOMFragment|
- 		|
- 		+ _main_(fragment : DocumentFragment, document : HTMLDocument, parser : DOMFragmentParser, i : int, argv : String[1]) : void\l+ _print_(child : Node, indent : String, node : Node) : void\l
-	}"
- ]
 "NamespaceSupport" [
 	label="{
  		org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport|
@@ -218,20 +190,6 @@ digraph classes {
  		org/cyberneko/html/SecuritySupport12|
  		|
  		getContextClassLoader( : PrivilegedAction) : ClassLoader\lgetFileExists(f : File,  : PrivilegedAction) : boolean\lgetFileInputStream(file : File, e : PrivilegedActionException,  : PrivilegedExceptionAction) : FileInputStream\lgetLastModified( : PrivilegedAction, f : File) : long\lgetParentClassLoader( : PrivilegedAction, cl : ClassLoader) : ClassLoader\lgetResourceAsStream( : PrivilegedAction, cl : ClassLoader, name : String) : InputStream\lgetSystemClassLoader( : PrivilegedAction) : ClassLoader\lgetSystemProperty(propName : String,  : PrivilegedAction) : String\l
-	}"
- ]
-"Writer" [
-	label="{
- 		test/Writer|
- 		# out : PrintWriter\l- FSTRINGBUFFER : XMLStringBuffer\l|
- 		+ Writer() : Writer\l+ Writer(e : UnsupportedEncodingException, encoding : String, stream : OutputStream) : Writer\l+ Writer(stream : OutputStream) : Writer\l+ Writer(writer : Writer) : Writer\l+ _main_(source : , parser : , filters : [1], argv : String[1], i : int) : void\l+ characters(text : XMLString, augs : Augmentations) : void\l+ comment(augs : Augmentations, text : XMLString) : void\l+ doctypeDecl(augs : Augmentations, root : String, sysid : String, pubid : String) : void\l+ emptyElement(attrs : XMLAttributes, augs : Augmentations, element : QName) : void\l+ endElement(element : QName, augs : Augmentations) : void\l+ ignorableWhitespace(augs : Augmentations, text : XMLString) : void\l+ processingInstruction(target : String, data : XMLString, augs : Augmentations) : void\l+ startDocument(locator : XMLLocator, augs : Augmentations, encoding : String) : void\l+ startDocument(locator : XMLLocator, nscontext : NamespaceContext, augs : Augmentations, encoding : String) : void\l+ startElement(auris : String[1], attrs : XMLAttributes, aname : String, acount : int, element : QName, augs : Augmentations, i : int, anames : String[1]) : void\l+ xmlDecl(version : String, standalone : String, encoding : String, augs : Augmentations) : void\l# chars() : void\l# print(i : int, s : String, c : char, length : int) : void\l_# sortAttrNames_(attrs : XMLAttributes, index : int, auris : String[1], tn : String, anames : String[1], tu : String, i : int, i : int, j : int) : void\l
-	}"
- ]
-"Script" [
-	label="{
- 		sample/Script|
- 		# fBuffer : StringBuffer\l# fConfiguration : HTMLConfiguration\l_# SCRIPT_TYPE_ : String\l_# AUGMENTATIONS_ : String\l# fSystemId : String\l# fScriptCount : int\l_# FILTERS_ : String\l|
- 		+ Script(config : HTMLConfiguration) : Script\l+ _main_(parser : HTMLConfiguration, filters : [1], argv : String[1], i : int) : void\l+ characters(text : XMLString, augs : Augmentations) : void\l+ emptyElement(value : String, attrs : XMLAttributes, augs : Augmentations, element : QName) : void\l+ endElement(line : String, out : PrintWriter, in : BufferedReader, systemId : String, e : IOException, sout : StringWriter, source : , element : QName, augs : Augmentations) : void\l+ startDocument(locator : XMLLocator, augs : Augmentations, encoding : String) : void\l+ startElement(attrs : XMLAttributes, value : String, element : QName, augs : Augmentations) : void\l
 	}"
  ]
 "HTMLScanner" [
@@ -269,20 +227,6 @@ digraph classes {
  		+ DOMFragmentParser() : DOMFragmentParser\l+ characters(node : Node, node : Node, cdata : CDATASection, cdata : CDATASection, textNode : Text, textNode : Text, augs : Augmentations, text : XMLString) : void\l+ comment(comment : Comment, augs : Augmentations, text : XMLString) : void\l+ doctypeDecl(sysid : String, pubid : String, root : String, augs : Augmentations) : void\l+ emptyElement(attrs : XMLAttributes, element : QName, augs : Augmentations) : void\l+ endCDATA(augs : Augmentations) : void\l+ endDocument(augs : Augmentations) : void\l+ endElement(augs : Augmentations, element : QName) : void\l+ endGeneralEntity(name : String, augs : Augmentations) : void\l+ endPrefixMapping(augs : Augmentations, prefix : String) : void\l+ getDocumentSource() : XMLDocumentSource\l+ getErrorHandler(xmlErrorHandler : XMLErrorHandler, errorHandler : ErrorHandler, e : XMLConfigurationException) : ErrorHandler\l+ getFeature(message : String, featureId : String, e : XMLConfigurationException) : boolean\l+ getProperty(propertyId : String, e : XMLConfigurationException, message : String) : object\l+ ignorableWhitespace(augs : Augmentations, text : XMLString) : void\l+ parse(pubid : String, encoding : String, ex : Exception, e : XMLParseException, inputSource : , sysid : String, stream : InputStream, reader : Reader, source : InputSource, fragment : DocumentFragment) : void\l+ parse(systemId : String, fragment : DocumentFragment) : void\l+ processingInstruction(pi : ProcessingInstruction, data : XMLString, augs : Augmentations, target : String) : void\l+ setDocumentSource(source : XMLDocumentSource) : void\l+ setErrorHandler(errorHandler : ErrorHandler) : void\l+ setFeature(e : XMLConfigurationException, message : String, state : boolean, featureId : String) : void\l+ setProperty(propertyId : String, e : XMLConfigurationException, message : String, value : object) : void\l+ startCDATA(augs : Augmentations) : void\l+ startDocument(locator : XMLLocator, encoding : String, augs : Augmentations) : void\l+ startDocument(locator : XMLLocator, nscontext : NamespaceContext, augs : Augmentations, encoding : String) : void\l+ startElement(aname : String, i : int, elementNode : Element, avalue : String, attrs : XMLAttributes, count : int, element : QName, augs : Augmentations) : void\l+ startGeneralEntity(entityRef : EntityReference, encoding : String, augs : Augmentations, name : String, id : XMLResourceIdentifier) : void\l+ startPrefixMapping(uri : String, prefix : String, augs : Augmentations) : void\l+ textDecl(version : String, encoding : String, augs : Augmentations) : void\l+ xmlDecl(version : String, encoding : String, standalone : String, augs : Augmentations) : void\l
 	}"
  ]
-"TestHTMLDOM" [
-	label="{
- 		sample/TestHTMLDOM|
- 		|
- 		+ _main_(parser : DOMParser, i : int, argv : String[1]) : void\l+ _print_(child : Node, indent : String, node : Node) : void\l
-	}"
- ]
-"Purifier" [
-	label="{
- 		org/cyberneko/html/filters/Purifier|
- 		_# AUGMENTATIONS_ : String\l# fSystemId : String\l# fSeenDoctype : boolean\l- fQName : QName\l- FSTRINGBUFFER : XMLStringBuffer\l# fSeenRootElement : boolean\l# fNamespaceContext : NamespaceContext\l# fNamespaces : boolean\l# fInCDATASection : boolean\l_- RECOGNIZED_FEATURES_ : String[1]\l# fSynthesizedNamespaceCount : int\l# fAugmentations : boolean\l# fPublicId : String\l_- RECOGNIZED_FEATURES_DEFAULTS_ : Boolean[1]\l+ _SYNTHESIZED_NAMESPACE_PREFX_ : String\l- FINFOSETAUGS : HTMLAugmentations\l_# NAMESPACES_ : String\l_# SYNTHESIZED_ITEM_ : HTMLEventInfo\l|
- 		+ characters(c : char, str : StringBuffer, length : int, i : int, augs : Augmentations, text : XMLString) : void\l+ comment(str : StringBuffer, length : int, i : int, c : char, augs : Augmentations, text : XMLString) : void\l+ doctypeDecl(sysid : String, pubid : String, root : String, augs : Augmentations) : void\l+ emptyElement(attrs : XMLAttributes, element : QName, augs : Augmentations) : void\l+ endCDATA(augs : Augmentations) : void\l+ endElement(augs : Augmentations, element : QName) : void\l+ processingInstruction(target : String, data : XMLString, augs : Augmentations) : void\l+ reset(manager : XMLComponentManager) : void\l+ startCDATA(augs : Augmentations) : void\l+ startDocument(locator : XMLLocator, encoding : String, augs : Augmentations) : void\l+ startDocument(nscontext : NamespaceContext, locator : XMLLocator, augs : Augmentations, encoding : String) : void\l+ startElement(attrs : XMLAttributes, augs : Augmentations, element : QName) : void\l+ xmlDecl(version : String, standalone : String, augs : Augmentations, encoding : String) : void\l# SYNTHESIZEDAUGS(augs : HTMLAugmentations) : Augmentations\l# handleStartDocument() : void\l# handleStartElement(attrCount : int, attrs : XMLAttributes, i : int, element : QName, augs : Augmentations) : void\l# purifyName(length : int, seenColon : boolean, localpart : boolean, i : int, str : StringBuffer, c : char, name : String) : String\l# purifyQName(qname : QName) : QName\l# purifyText(i : int, c : char, text : XMLString) : XMLString\l# synthesizeBinding(atype : String, qname : String, localpart : String, ns : String, avalue : String, prefix : String, uri : String, attrs : XMLAttributes) : void\l_# toHexString_(padlen : int, i : int, len : int, str : StringBuffer, c : int) : String\l
-	}"
- ]
 "SpecialScanner" [
 	label="{
  		org/cyberneko/html/HTMLScanner/SpecialScanner|
@@ -299,25 +243,19 @@ digraph classes {
  ]
 edge[arrowhead = "empty"; style= "solid"]
 ElementRemover -> DefaultFilter
+Identity -> DefaultFilter
 NamespaceBinder -> DefaultFilter
 SecuritySupport12 -> SecuritySupport
 Purifier -> DefaultFilter
 Writer -> DefaultFilter
-Identity -> DefaultFilter
-Writer -> DefaultFilter
-Script -> DefaultFilter
 edge[arrowhead = "empty"; style = "dashed"]
 edge[arrowhead = "open"; style = "solid"]
 HTMLScanner -> CurrentEntity
 InfoStack -> Info
-HTMLScanner -> PlaybackInputStream
 NamespaceSupport -> Entry
 IntProperties -> Entry
 edge[arrowhead = "open"; style = "dashed"]
 ContentScanner -> LocationItem
 HTMLTagBalancer -> Info
 ObjectFactory -> SecuritySupport
-RemoveElements -> ElementRemover
-RemoveElements -> Writer
-TestHTMLDOMFragment -> DOMFragmentParser
 }

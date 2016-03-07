@@ -4,7 +4,7 @@ digraph classes {
  overlap=false
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "circle" style="filled"]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
-edge[arrowhead = "empty"; style= "solid"]
+label="UML-eLib"edge[arrowhead = "empty"; style= "solid"]
 InternalUser -> User
 Book -> Document
 TechnicalReport -> Document
@@ -33,11 +33,11 @@ Document -> User
 	label="Book"
  ]
 "User" [
-	color="0.147569444400, 1.0, 0.8"
+	color="0.0793650793600, 1.0, 0.8"
 	label="User"
  ]
 "Loan" [
-	color="0.173611111100, 1.0, 0.8"
+	color="0.119047619100, 1.0, 0.8"
 	label="Loan"
  ]
 "TechnicalReport" [
@@ -45,7 +45,7 @@ Document -> User
 	label="TechnicalReport"
  ]
 "Document" [
-	color="0.0954861111100, 1.0, 0.8"
+	color="0., 1.0, 0.8"
 	label="Document"
  ]
 "Library" [
