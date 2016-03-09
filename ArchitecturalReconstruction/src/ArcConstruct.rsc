@@ -70,5 +70,10 @@ public void reconstructNeko() {
 	neakoReconstruct(|project://nekohtml-1.9.13//src//org/cyberneko//html|, output, "1.9.13");
 	neakoReconstruct(|project://nekohtml-1.9.14//src//org/cyberneko//html|, output, "1.9.14");
 	neakoReconstruct(|project://nekohtml-1.9.15//src//org/cyberneko//html|, output, "1.9.15");	
+	neakoReconstruct(|project://nekohtml-1.9.16//src//org/cyberneko//html|, output, "1.9.16");	
+	neakoReconstruct(|project://nekohtml-1.9.17//src//org/cyberneko//html|, output, "1.9.17");	
+	neakoReconstruct(|project://nekohtml-1.9.18//src//org/cyberneko//html|, output, "1.9.18");	
+	neakoReconstruct(|project://nekohtml-1.9.19//src//org/cyberneko//html|, output, "1.9.19");	
+	neakoReconstruct(|project://nekohtml-1.9.20//src//org/cyberneko//html|, output, "1.9.20");	
 	neakoReconstruct(|project://nekohtml-1.9.21//src//org/cyberneko//html|, output, "1.9.21");
 }

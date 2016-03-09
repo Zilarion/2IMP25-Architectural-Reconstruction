@@ -66,7 +66,7 @@ tuple[rel[loc, loc], rel[loc, loc]] getPropagations(Program p, M3 m){
 	OFG backward = backwardProp(ofg, gen, kill);
 	associations += getAssociations(backward, m);
 	dependencies += getDependencies(backward, m);
-		
+	
 	////Weakly forward uses the same gen variable
 	weaklyForwardGen = gen;
 	OFG weaklyForwardProp = forwardProp(ofg, weaklyForwardGen, kill);
