@@ -1,6 +1,8 @@
 digraph classes {
  fontname = "Bitstream Vera Sans"
  fontsize = 8
+ overlap=false
+ concentrate=true
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "record" ]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
 label="UML-eLib""InternalUser" [
@@ -20,14 +22,14 @@ label="UML-eLib""InternalUser" [
 "User" [
 	label="{
  		User|
- 		fullName : String\laddress : String\lphoneNumber : String\l_nextUserCodeAvailable_ : int\luserCode : int\lloans : Collection\l|
+ 		_nextUserCodeAvailable_ : int\laddress : String\lfullName : String\lloans : Collection\lphoneNumber : String\luserCode : int\l|
  		+ User(phone : String, addr : String, name : String) : User\l+ addLoan(loan : Loan) : void\l+ authorizedUser() : boolean\l+ equals(obj : object, user : User) : boolean\l+ getAddress() : String\l+ getCode() : int\l+ getName() : String\l+ getPhone() : String\l+ numberOfLoans() : int\l+ printInfo(doc : Document, i : Iterator, loan : Loan) : void\l+ removeLoan(loan : Loan) : void\l
 	}"
  ]
 "Loan" [
 	label="{
  		Loan|
- 		user : User\ldocument : Document\l|
+ 		document : Document\luser : User\l|
  		+ Loan(doc : Document, usr : User) : Loan\l+ equals(loan : Loan, obj : object) : boolean\l+ getDocument() : Document\l+ getUser() : User\l+ print() : void\l
 	}"
  ]
@@ -41,7 +43,7 @@ label="UML-eLib""InternalUser" [
 "Document" [
 	label="{
  		Document|
- 		title : String\lloan : Loan\lauthors : String\lISBNCode : String\l_nextDocumentCodeAvailable_ : int\ldocumentCode : int\l|
+ 		ISBNCode : String\l_nextDocumentCodeAvailable_ : int\lauthors : String\ldocumentCode : int\lloan : Loan\ltitle : String\l|
  		+ Document(tit : String) : Document\l+ addLoan(ln : Loan) : void\l+ authorizedLoan(user : User) : boolean\l+ equals(doc : Document, obj : object) : boolean\l+ getAuthors() : String\l+ getBorrower() : User\l+ getCode() : int\l+ getISBN() : String\l+ getTitle() : String\l+ isAvailable() : boolean\l+ isOut() : boolean\l+ printInfo() : void\l+ removeLoan() : void\l# printAuthors() : void\l# printAvailability(user : User) : void\l# printGeneralInfo() : void\l# printHeader() : void\l
 	}"
  ]

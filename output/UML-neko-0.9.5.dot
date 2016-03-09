@@ -1,242 +1,244 @@
 digraph classes {
  fontname = "Bitstream Vera Sans"
  fontsize = 8
+ overlap=false
+ concentrate=true
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "record" ]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
 label="UML-neko-0.9.5""LocationItem" [
 	label="{
- 		org/cyberneko/html/HTMLScanner/LocationItem|
+ 		LocationItem|
  		|
  		
 	}"
  ]
 "DOMParser" [
 	label="{
- 		org/cyberneko/html/parsers/DOMParser|
+ 		DOMParser|
  		|
  		
 	}"
  ]
 "HTMLEntities" [
 	label="{
- 		org/cyberneko/html/HTMLEntities|
+ 		HTMLEntities|
  		|
  		
 	}"
  ]
 "Element" [
 	label="{
- 		org/cyberneko/html/HTMLElements/Element|
+ 		Element|
  		|
  		
 	}"
  ]
 "SAXParser" [
 	label="{
- 		org/cyberneko/html/parsers/SAXParser|
+ 		SAXParser|
  		|
  		
 	}"
  ]
 "SecuritySupport" [
 	label="{
- 		org/cyberneko/html/SecuritySupport|
+ 		SecuritySupport|
  		|
  		
 	}"
  ]
 "NamespaceBinder" [
 	label="{
- 		org/cyberneko/html/filters/NamespaceBinder|
+ 		NamespaceBinder|
  		|
  		
 	}"
  ]
 "ConfigurationError" [
 	label="{
- 		org/cyberneko/html/ObjectFactory/ConfigurationError|
+ 		ConfigurationError|
  		|
  		
 	}"
  ]
 "SynthesizedItem" [
 	label="{
- 		org/cyberneko/html/HTMLEventInfo/SynthesizedItem|
+ 		SynthesizedItem|
  		|
  		
 	}"
  ]
 "IntProperties" [
 	label="{
- 		org/cyberneko/html/HTMLEntities/IntProperties|
+ 		IntProperties|
  		|
  		
 	}"
  ]
 "Purifier" [
 	label="{
- 		org/cyberneko/html/filters/Purifier|
+ 		Purifier|
  		|
  		
 	}"
  ]
 "Entry" [
 	label="{
- 		org/cyberneko/html/HTMLEntities/IntProperties/Entry|
+ 		Entry|
  		|
  		
 	}"
  ]
 "CurrentEntity" [
 	label="{
- 		org/cyberneko/html/HTMLScanner/CurrentEntity|
+ 		CurrentEntity|
  		|
  		
 	}"
  ]
 "HTMLElements" [
 	label="{
- 		org/cyberneko/html/HTMLElements|
+ 		HTMLElements|
  		|
  		
 	}"
  ]
 "HTMLAugmentations" [
 	label="{
- 		org/cyberneko/html/HTMLAugmentations|
+ 		HTMLAugmentations|
  		|
  		
 	}"
  ]
 "ElementRemover" [
 	label="{
- 		org/cyberneko/html/filters/ElementRemover|
+ 		ElementRemover|
  		|
  		
 	}"
  ]
 "ErrorReporter" [
 	label="{
- 		org/cyberneko/html/HTMLConfiguration/ErrorReporter|
+ 		ErrorReporter|
  		|
  		
 	}"
  ]
 "DefaultFilter" [
 	label="{
- 		org/cyberneko/html/filters/DefaultFilter|
+ 		DefaultFilter|
  		|
  		
 	}"
  ]
 "Writer" [
 	label="{
- 		org/cyberneko/html/filters/Writer|
+ 		Writer|
  		|
  		
 	}"
  ]
 "HTMLTagBalancer" [
 	label="{
- 		org/cyberneko/html/HTMLTagBalancer|
+ 		HTMLTagBalancer|
  		|
  		
 	}"
  ]
 "ObjectFactory" [
 	label="{
- 		org/cyberneko/html/ObjectFactory|
+ 		ObjectFactory|
  		|
  		
 	}"
  ]
 "HTMLConfiguration" [
 	label="{
- 		org/cyberneko/html/HTMLConfiguration|
+ 		HTMLConfiguration|
  		|
  		
 	}"
  ]
 "ElementList" [
 	label="{
- 		org/cyberneko/html/HTMLElements/ElementList|
+ 		ElementList|
  		|
  		
 	}"
  ]
 "NamespaceSupport" [
 	label="{
- 		org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport|
+ 		NamespaceSupport|
  		|
  		
 	}"
  ]
 "Identity" [
 	label="{
- 		org/cyberneko/html/filters/Identity|
+ 		Identity|
  		|
  		
 	}"
  ]
 "InfoStack" [
 	label="{
- 		org/cyberneko/html/HTMLTagBalancer/InfoStack|
+ 		InfoStack|
  		|
  		
 	}"
  ]
 "SecuritySupport12" [
 	label="{
- 		org/cyberneko/html/SecuritySupport12|
+ 		SecuritySupport12|
  		|
  		
 	}"
  ]
 "HTMLScanner" [
 	label="{
- 		org/cyberneko/html/HTMLScanner|
+ 		HTMLScanner|
  		|
  		
 	}"
  ]
 "Entry" [
 	label="{
- 		org/cyberneko/html/filters/NamespaceBinder/NamespaceSupport/Entry|
+ 		Entry|
  		|
  		
 	}"
  ]
 "PlaybackInputStream" [
 	label="{
- 		org/cyberneko/html/HTMLScanner/PlaybackInputStream|
+ 		PlaybackInputStream|
  		|
  		
 	}"
  ]
 "Info" [
 	label="{
- 		org/cyberneko/html/HTMLTagBalancer/Info|
+ 		Info|
  		|
  		
 	}"
  ]
 "DOMFragmentParser" [
 	label="{
- 		org/cyberneko/html/parsers/DOMFragmentParser|
+ 		DOMFragmentParser|
  		|
  		
 	}"
  ]
 "SpecialScanner" [
 	label="{
- 		org/cyberneko/html/HTMLScanner/SpecialScanner|
+ 		SpecialScanner|
  		|
  		
 	}"
  ]
 "ContentScanner" [
 	label="{
- 		org/cyberneko/html/HTMLScanner/ContentScanner|
+ 		ContentScanner|
  		|
  		
 	}"

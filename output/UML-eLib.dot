@@ -1,6 +1,8 @@
 digraph classes {
  fontname = "Bitstream Vera Sans"
  fontsize = 8
+ overlap=false
+ concentrate=true
  node [ fontname = "Bitstream Vera Sans" fontsize = 8 shape = "record" ]
  edge [ fontname = "Bitstream Vera Sans" fontsize = 8 ]
 label="UML-eLib""InternalUser" [

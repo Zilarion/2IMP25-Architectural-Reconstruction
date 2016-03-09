@@ -1,0 +1,17 @@
+#!/bin/bash
+
+
+# Loop over all .dot files
+for i in *.dot; do 
+	echo Running dot on: $i
+	
+	unflatten -f -l 3 -c 3 -o $i.flat $i
+	dot -Tpng:quartz $i.flat -o $i.png
+	rm $i.flat
+done
+
+# Loop over all .neato files
+for i in *.neato; do
+	echo Running neato on: $i
+	neato -Tpng:quartz $i -o $i.png
+done
